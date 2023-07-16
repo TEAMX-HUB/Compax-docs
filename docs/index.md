@@ -17,10 +17,12 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         ...       # Other markdown pages, images and other files.
 
 ## Introduction
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+    - Project Overview: The Classroom Finder web app is a platform that allows users to search for available classrooms and make reservations in educational institutions.
+
+    - Purpose of the Document: This document serves as a comprehensive guide for the development, deployment, and maintenance of the Classroom Finder app.
     
-    Project Overview
-    Purpose of the Document
-    Document Conventions
+    - Document Conventions: N/A (Provide any specific document conventions, if applicable)
 
 ## Frontend Documentation
 
