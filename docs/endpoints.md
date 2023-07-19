@@ -24,19 +24,21 @@ Based on the provided Python files, here are the updated endpoints for the Compa
 
 - classroom.py:
 
-GET /classrooms: Retrieves a list of available classrooms.
-GET /classrooms/{id}: Retrieves detailed information about a specific classroom.
-POST /classrooms: Creates a new classroom.
-PUT /classrooms/{id}: Updates the details of a specific classroom.
-DELETE /classrooms/{id}: Deletes a specific classroom.
-laboratory.py:
+    - `GET /classrooms`: Retrieves a list of available classrooms.
+    - `GET /classrooms/{id}`: Retrieves detailed information about a specific classroom.
+    - `POST /classrooms`: Creates a new classroom.
+    - `PUT /classrooms/{id}`: Updates the details of a specific classroom.
+    - `DELETE /classrooms/{id}`: Deletes a specific classroom.
 
-GET /laboratories: Retrieves a list of available laboratories.
-GET /laboratories/{id}: Retrieves detailed information about a specific laboratory.
-POST /laboratories: Creates a new laboratory.
-PUT /laboratories/{id}: Updates the details of a specific laboratory.
-DELETE /laboratories/{id}: Deletes a specific laboratory.
-office.py:
+- laboratory.py:
+
+    - `GET /laboratories`: Retrieves a list of available laboratories.
+    - `GET /laboratories/{id}`: Retrieves detailed information about a specific laboratory.
+    - `POST /laboratories`: Creates a new laboratory.
+    - `PUT /laboratories/{id}`: Updates the details of a specific laboratory.
+    - `DELETE /laboratories/{id}`: Deletes a specific laboratory.
+
+- office.py:
 
 GET /offices: Retrieves a list of available offices.
 GET /offices/{id}: Retrieves detailed information about a specific office.
