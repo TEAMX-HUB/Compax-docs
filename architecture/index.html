@@ -54,6 +54,10 @@
     </ul>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_design/">System Design</a>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -94,43 +98,12 @@
 <li>Authentication Middleware: Intercepts and validates requests to ensure the user is authenticated and authorized to access protected endpoints.</li>
 <li>Data Models: Defines the object-relational mapping for the entities (e.g., User, Classroom, Booking) using an ORM library. It represents the database tables and relationships.</li>
 </ul>
-<h1 id="system-design">System Design</h1>
-<hr />
-<p>The system design of the Compax backend focuses on scalability, performance, and security.</p>
-<h2 id="scalability">Scalability</h2>
-<ul>
-<li>Microservices: If required, the backend can be designed as microservices, with separate services responsible for user management, classroom management, and booking management. This allows independent scaling of different components based on demand.</li>
-<li>Caching: Implement caching mechanisms, such as Redis or in-memory caches, to store frequently accessed data and reduce the load on the database.
-Load Balancing: Introduce load balancing techniques, such as using a reverse proxy or a load balancer, to distribute incoming requests across multiple backend servers.</li>
-</ul>
-<h2 id="performance">Performance</h2>
-<ul>
-<li>Asynchronous Operations: Utilize asynchronous programming techniques, such as Python's async/await or asynchronous task queues (e.g., Celery), to handle time-consuming operations without blocking other requests.</li>
-<li>Optimized Queries: Optimize database queries by indexing the relevant fields and minimizing the number of database queries required for each operation.</li>
-<li>Caching: Cache frequently accessed data to reduce the need for repeated database queries and improve response times.</li>
-</ul>
-<h2 id="security">Security</h2>
-<ul>
-<li>Authentication and Authorization: Implement secure user authentication using techniques like JWT (JSON Web Tokens) or OAuth2. Ensure that only authenticated users can access protected endpoints. Use authorization mechanisms, such as role-based access control (RBAC), to restrict access to specific resources.</li>
-<li>Input Validation: Validate and sanitize user input to prevent security vulnerabilities like SQL injection or cross-site scripting (XSS) attacks.</li>
-<li>Secure Communication: Enable secure communication between the frontend and backend by using HTTPS and SSL/TLS certificates.</li>
-</ul>
-<h2 id="error-handling-and-logging">Error Handling and Logging</h2>
-<ul>
-<li>Error Handling: Implement proper error handling mechanisms to catch and handle exceptions gracefully. Return appropriate error responses to the frontend, including error codes, messages, and relevant details.</li>
-<li>Logging: Implement logging to capture important events, errors, and debugging information. Use a logging library like Python's logging to store logs for analysis and troubleshooting.</li>
-</ul>
-<h2 id="testing-and-deployment">Testing and Deployment</h2>
-<ul>
-<li>Unit and Integration Testing: Write automated tests for each component to ensure correct functionality and identify issues early in the development process.</li>
-<li>Continuous Integration and Deployment: Utilize CI/CD (Continuous Integration/Continuous Deployment) pipelines to automate the testing and deployment process. Use tools like Jenkins, Travis CI, or GitLab CI/CD to streamline the development workflow.</li>
-</ul>
-<p>The backend architecture and system design aim to provide a scalable, performant, and secure foundation for the Compax web application. By following best practices and leveraging appropriate technologies, the backend ensures the smooth operation of the application and supports its growth and maintenance over time.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href=".." class="btn btn-neutral float-left" title="Welcome to Compax Navigation App Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../system_design/" class="btn btn-neutral float-right" title="System Design">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -155,6 +128,8 @@ Load Balancing: Introduce load balancing techniques, such as using a reverse pro
     
       <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../system_design/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
