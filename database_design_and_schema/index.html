@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Database Design and Schema - Compax Backend Api 0.1.0</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Database Design and Schema";
+        var mkdocs_page_input_path = "database_design_and_schema.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Compax Backend Api 0.1.0
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Compax Navigation App Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../API_design_principles/">API Design Principles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../architecture/">Backend Architecture</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Database Design and Schema</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../development_environment_setup/">Development Environment Setup</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../endpoints/">Endpoints for the Compax App</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_design/">System Design</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../technology_stack_used/">Technology Stack Used</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Compax Backend Api 0.1.0</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Database Design and Schema</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="database-design-and-schema">Database Design and Schema</h1>
+<p>The database design and schema for the Compax web app are crucial components that define the structure and organization of data within the application. A well-designed database schema ensures efficient data storage, retrieval, and integrity. Below is an elaboration of the database design and schema for the Compax web app:</p>
+<ul>
+<li><strong>Entity-Relationship Diagram (ERD)</strong>:</li>
+</ul>
+<p>An Entity-Relationship Diagram (ERD) is a visual representation of the database schema, showing the entities (tables) and their relationships. The ERD for the Compax web app might include the following entities:</p>
+<ul>
+<li>
+<p><strong>Users</strong>: Represents information about the users of the application, including regular users, administrators, and exam officers. It stores user details such as username, email, password (hashed), role, and other relevant information.</p>
+</li>
+<li>
+<p><strong>Buildings</strong>: Contains details about the different buildings available within the educational institution. Information may include building name, address, capacity, etc.</p>
+</li>
+<li>
+<p><strong>Classrooms</strong>: Stores information about individual classrooms within the buildings. It may include attributes like classroom number, seating capacity, facilities, and the associated building.</p>
+</li>
+<li>
+<p><strong>Laboratories</strong>: Similar to classrooms, this entity stores details about laboratories, such as lab number, equipment, capacity, and the corresponding building.</p>
+</li>
+<li>
+<p><strong>Offices</strong>: Contains information about offices within the institution, such as office number, occupant, contact details, etc.</p>
+</li>
+<li>
+<p><strong>Ratings</strong>: Stores ratings and reviews given by users for classrooms and laboratories. It may include attributes like user ID, classroom/laboratory ID, rating value, review text, etc.</p>
+</li>
+<li>
+<p><strong>Bookings</strong>: Tracks bookings made by users for specific classrooms or laboratories. It includes details like user ID, classroom/laboratory ID, booking date, start time, end time, and status.</p>
+</li>
+</ul>
+<p>The ERD provides a clear visualization of the relationships between different entities and helps in understanding how data is interconnected within the database.</p>
+<ul>
+<li><strong>Table Structure and Data Types</strong>:</li>
+</ul>
+<p>The table structure for each entity in the database is defined by specifying the columns (attributes) and their corresponding data types. For example:</p>
+<ul>
+<li>
+<p><strong>Users Table</strong>:</p>
+<ul>
+<li><code>id</code>: Primary key, auto-incremented integer.</li>
+<li><code>username</code>: Unique string, used for user identification.</li>
+<li><code>email</code>: Unique email address of the user.</li>
+<li><code>password_hash</code>: Hashed representation of the user's password for security.</li>
+<li><code>role</code>: Enum field representing the user's role (regular, admin, exam officer).</li>
+<li><code>created_at</code>: Timestamp indicating when the user account was created.</li>
+<li><code>updated_at</code>: Timestamp indicating the last update to the user account.</li>
+</ul>
+</li>
+<li>
+<p><strong>Classrooms Table</strong>:</p>
+<ul>
+<li><code>id</code>: Primary key, auto-incremented integer.</li>
+<li><code>classroom_number</code>: String representing the classroom number or identifier.</li>
+<li><code>capacity</code>: Integer specifying the seating capacity of the classroom.</li>
+<li><code>building_id</code>: Foreign key referencing the ID of the associated building.</li>
+</ul>
+</li>
+<li>
+<p><strong>Bookings Table</strong>:</p>
+<ul>
+<li><code>id</code>: Primary key, auto-incremented integer.</li>
+<li><code>user_id</code>: Foreign key referencing the ID of the user making the booking.</li>
+<li><code>classroom_id</code>: Foreign key referencing the ID of the booked classroom.</li>
+<li><code>booking_date</code>: Date when the booking was made.</li>
+<li><code>start_time</code>: Time of the booking's start.</li>
+<li><code>end_time</code>: Time of the booking's end.</li>
+<li><code>status</code>: Enum field indicating the booking status (confirmed, pending, canceled, etc.).</li>
+</ul>
+</li>
+</ul>
+<p>The choice of data types for each column ensures that the database efficiently stores and retrieves the data, while also enforcing data integrity constraints.</p>
+<ul>
+<li><strong>Normalization and Data Integrity</strong>:</li>
+</ul>
+<p>Database normalization is applied to ensure data integrity and to reduce data redundancy. The schema is organized into multiple tables, with each table focused on a specific entity. Relationships between entities are established using foreign keys, maintaining referential integrity.</p>
+<ul>
+<li><strong>Indexes and Performance Optimization</strong>:</li>
+</ul>
+<p>Proper indexing is essential for improving query performance. Indexes are created on columns that are frequently used for filtering or searching data, such as the user ID, building ID, classroom ID, etc. Additionally, unique constraints and primary keys help maintain data uniqueness and integrity.</p>
+<ul>
+<li><strong>Real-time Data (Supabase, Optional)</strong>:</li>
+</ul>
+<p>If the application requires real-time data updates, features like real-time notifications for bookings or reviews, Supabase can be used as an optional addition to the database stack.</p>
+<p>The database design and schema should be carefully planned and optimized to meet the specific requirements of the Compax web app. Regular backups and maintenance procedures should be implemented to ensure data reliability and security.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../architecture/" class="btn btn-neutral float-left" title="Backend Architecture"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../development_environment_setup/" class="btn btn-neutral float-right" title="Development Environment Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../architecture/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../development_environment_setup/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
