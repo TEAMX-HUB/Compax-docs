@@ -87,96 +87,76 @@
               
                 <h1 id="endpoints-for-the-compax-app">Endpoints for the Compax App</h1>
 <hr />
-<p>Based on the provided Python files, here are the updated endpoints for the Compax web app:</p>
 <ul>
 <li>
-<p>admin.py:</p>
+<p>default</p>
 <ul>
-<li><code>GET /admin/users</code>: Retrieves a list of users for administrative purposes.</li>
-<li><code>PUT /admin/users/{id}</code>: Updates the details of a specific user for administrative purposes.</li>
+<li><code>GET / Root</code></li>
+<li><code>GET /search/classrooms</code>: Query Classrooms By Parameters</li>
+<li><code>GET /search/buildings</code>: Query Buildings By Parameters</li>
+<li><code>GET /search/labs</code>: Query Labs By Parameters</li>
+<li><code>GET /search/offices</code>: Query Offices By Parameters</li>
 </ul>
 </li>
 <li>
-<p>auth.py:</p>
+<p>users</p>
 <ul>
-<li><code>POST /auth/register</code>: Registers a new user.</li>
-<li><code>POST /auth/login</code>: Authenticates and logs in a user.</li>
-<li><code>POST /auth/logout</code>: Logs out a user.</li>
+<li><code>GET /i/{reference}</code>: Get User By Reference</li>
+<li><code>GET /i/{uuid}</code>: Get User By Uuid</li>
+<li><code>GET /i/{username}</code>: Get User By Username</li>
+<li><code>POST /i/new</code>: Create User</li>
+<li><code>POST /i/admin/new</code>: Create Admin</li>
+<li><code>POST /i/officer/new</code>: Create Officer</li>
 </ul>
 </li>
 <li>
-<p>building.py:</p>
+<p>auth</p>
 <ul>
-<li><code>GET /buildings</code>: Retrieves a list of available buildings.</li>
-<li><code>GET /buildings/{id}</code>: Retrieves detailed information about a specific building.</li>
-<li><code>POST /buildings</code>: Creates a new building.</li>
-<li><code>PUT /buildings/{id}</code>: Updates the details of a specific building.</li>
-<li><code>DELETE /buildings/{id}</code>: Deletes a specific building.</li>
+<li><code>GET /auth/signin</code>: Sign In</li>
+<li><code>POST /auth/signout</code>: Sign Out</li>
+<li><code>POST /auth/signup</code>: Sign Up</li>
+<li><code>POST /auth/admin/signup</code>: Sign Up Admin</li>
+<li><code>POST /auth/officer/signup</code>: Sign Up Examofficer</li>
 </ul>
 </li>
 <li>
-<p>classroom.py:</p>
+<p>classrooms</p>
 <ul>
-<li><code>GET /classrooms</code>: Retrieves a list of available classrooms.</li>
-<li><code>GET /classrooms/{id}</code>: Retrieves detailed information about a specific classroom.</li>
-<li><code>POST /classrooms</code>: Creates a new classroom.</li>
-<li><code>PUT /classrooms/{id}</code>: Updates the details of a specific classroom.</li>
-<li><code>DELETE /classrooms/{id}</code>: Deletes a specific classroom.</li>
+<li><code>GET /classrooms/</code>: Get All Classrooms</li>
+<li><code>GET /classroom/{classroom_id}</code>: Get Classroom</li>
+<li><code>PUT /classrooms/{classroom_id}</code>: Update Classroom</li>
+<li><code>DELETE /classrooms/{classroom_id}</code>: Delete Classroom</li>
+<li><code>POST /classrooms/new</code>: Create Classroom</li>
 </ul>
 </li>
 <li>
-<p>laboratory.py:</p>
+<p>buildings</p>
 <ul>
-<li><code>GET /laboratories</code>: Retrieves a list of available laboratories.</li>
-<li><code>GET /laboratories/{id}</code>: Retrieves detailed information about a specific laboratory.</li>
-<li><code>POST /laboratories</code>: Creates a new laboratory.</li>
-<li><code>PUT /laboratories/{id}</code>: Updates the details of a specific laboratory.</li>
-<li><code>DELETE /laboratories/{id}</code>: Deletes a specific laboratory.</li>
+<li><code>GET /buildings/</code>: Get All Buildings</li>
+<li><code>GET /buildings/{building_id}</code>: Get Building</li>
+<li><code>PUT /buildings/{building_id}</code>: Update Building</li>
+<li><code>DELETE /buildings/{building_id}</code>: Delete Building</li>
+<li><code>POST /buildings/new</code>: Create Building</li>
 </ul>
 </li>
 <li>
-<p>office.py:</p>
+<p>labs</p>
 <ul>
-<li><code>GET /offices</code>: Retrieves a list of available offices.</li>
-<li><code>GET /offices/{id}</code>: Retrieves detailed information about a specific office.</li>
-<li><code>POST /offices</code>: Creates a new office.</li>
-<li><code>PUT /offices/{id}</code>: Updates the details of a specific office.</li>
-<li><code>DELETE /offices/{id}</code>: Deletes a specific office.</li>
+<li><code>GET /labs</code>: Get All Labs</li>
+<li><code>GET /labs/{lab_id}</code>: Get Lab</li>
+<li><code>PUT /labs/{lab_id}</code>: Update Lab</li>
+<li><code>DELETE /labs/{lab_id}</code>: Delete Lab</li>
+<li><code>POST /labs/new</code>: Create Lab</li>
 </ul>
 </li>
 <li>
-<p>ratings.py:</p>
+<p>offices</p>
 <ul>
-<li><code>GET /ratings/classrooms/{id}</code>: Retrieves ratings and reviews for a specific classroom.</li>
-<li><code>GET /ratings/laboratories/{id}</code>: Retrieves ratings and reviews for a specific laboratory.</li>
-<li><code>POST /ratings/classrooms/{id}</code>: Adds a new rating and review for a specific classroom.</li>
-<li><code>POST /ratings/laboratories/{id}</code>: Adds a new rating and review for a specific laboratory.</li>
-</ul>
-</li>
-<li>
-<p>schedule.py:</p>
-<ul>
-<li><code>GET /schedule/classrooms/{id}</code>: Retrieves the schedule of bookings for a specific classroom.</li>
-<li><code>GET /schedule/laboratories/{id}</code>: Retrieves the schedule of bookings for a specific laboratory.</li>
-<li><code>POST /schedule/classrooms/{id}</code>: Creates a new booking for a specific classroom.</li>
-<li><code>POST /schedule/laboratories/{id}</code>: Creates a new booking for a specific laboratory.</li>
-<li><code>PUT /schedule/classrooms/{id}/{booking_id}</code>: Updates the details of a specific booking for a classroom.</li>
-<li><code>PUT /schedule/laboratories/{id}/{booking_id}</code>: Updates the details of a specific booking for a laboratory.</li>
-<li><code>DELETE /schedule/classrooms/{id}/{booking_id}</code>: Deletes a specific booking for a classroom.</li>
-<li><code>DELETE /schedule/laboratories/{id}/{booking_id}</code>: Deletes a specific booking for a laboratory.</li>
-</ul>
-</li>
-<li>
-<p>user.py:</p>
-<ul>
-<li><code>GET /users/{id}</code>: Retrieves detailed information about a specific user.</li>
-<li><code>PUT /users/{id}</code>: Updates the details of a specific user.</li>
-</ul>
-</li>
-<li>
-<p>errors.py:</p>
-<ul>
-<li><code>GET /errors/{error_code}</code>: Retrieves detailed information about a specific error code.</li>
+<li><code>GET /offices</code>: Get All Offices</li>
+<li><code>GET /offices/{office_id}</code>: Get Office</li>
+<li><code>PUT /offices/{office_id}</code>: Update Office</li>
+<li><code>DELETE /offices/{office_id}</code>: Delete Office</li>
+<li><code>POST /offices/new</code>: Create Office</li>
 </ul>
 </li>
 </ul>
