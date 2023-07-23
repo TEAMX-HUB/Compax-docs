@@ -136,32 +136,50 @@
 </li>
 <li>
 <p>office.py:</p>
+<ul>
+<li><code>GET /offices</code>: Retrieves a list of available offices.</li>
+<li><code>GET /offices/{id}</code>: Retrieves detailed information about a specific office.</li>
+<li><code>POST /offices</code>: Creates a new office.</li>
+<li><code>PUT /offices/{id}</code>: Updates the details of a specific office.</li>
+<li><code>DELETE /offices/{id}</code>: Deletes a specific office.</li>
+</ul>
+</li>
+<li>
+<p>ratings.py:</p>
+<ul>
+<li><code>GET /ratings/classrooms/{id}</code>: Retrieves ratings and reviews for a specific classroom.</li>
+<li><code>GET /ratings/laboratories/{id}</code>: Retrieves ratings and reviews for a specific laboratory.</li>
+<li><code>POST /ratings/classrooms/{id}</code>: Adds a new rating and review for a specific classroom.</li>
+<li><code>POST /ratings/laboratories/{id}</code>: Adds a new rating and review for a specific laboratory.</li>
+</ul>
+</li>
+<li>
+<p>schedule.py:</p>
+<ul>
+<li><code>GET /schedule/classrooms/{id}</code>: Retrieves the schedule of bookings for a specific classroom.</li>
+<li><code>GET /schedule/laboratories/{id}</code>: Retrieves the schedule of bookings for a specific laboratory.</li>
+<li><code>POST /schedule/classrooms/{id}</code>: Creates a new booking for a specific classroom.</li>
+<li><code>POST /schedule/laboratories/{id}</code>: Creates a new booking for a specific laboratory.</li>
+<li><code>PUT /schedule/classrooms/{id}/{booking_id}</code>: Updates the details of a specific booking for a classroom.</li>
+<li><code>PUT /schedule/laboratories/{id}/{booking_id}</code>: Updates the details of a specific booking for a laboratory.</li>
+<li><code>DELETE /schedule/classrooms/{id}/{booking_id}</code>: Deletes a specific booking for a classroom.</li>
+<li><code>DELETE /schedule/laboratories/{id}/{booking_id}</code>: Deletes a specific booking for a laboratory.</li>
+</ul>
+</li>
+<li>
+<p>user.py:</p>
+<ul>
+<li><code>GET /users/{id}</code>: Retrieves detailed information about a specific user.</li>
+<li><code>PUT /users/{id}</code>: Updates the details of a specific user.</li>
+</ul>
+</li>
+<li>
+<p>errors.py:</p>
+<ul>
+<li><code>GET /errors/{error_code}</code>: Retrieves detailed information about a specific error code.</li>
+</ul>
 </li>
 </ul>
-<p>GET /offices: Retrieves a list of available offices.
-GET /offices/{id}: Retrieves detailed information about a specific office.
-POST /offices: Creates a new office.
-PUT /offices/{id}: Updates the details of a specific office.
-DELETE /offices/{id}: Deletes a specific office.
-ratings.py:</p>
-<p>GET /ratings/classrooms/{id}: Retrieves ratings and reviews for a specific classroom.
-GET /ratings/laboratories/{id}: Retrieves ratings and reviews for a specific laboratory.
-POST /ratings/classrooms/{id}: Adds a new rating and review for a specific classroom.
-POST /ratings/laboratories/{id}: Adds a new rating and review for a specific laboratory.
-schedule.py:</p>
-<p>GET /schedule/classrooms/{id}: Retrieves the schedule of bookings for a specific classroom.
-GET /schedule/laboratories/{id}: Retrieves the schedule of bookings for a specific laboratory.
-POST /schedule/classrooms/{id}: Creates a new booking for a specific classroom.
-POST /schedule/laboratories/{id}: Creates a new booking for a specific laboratory.
-PUT /schedule/classrooms/{id}/{booking_id}: Updates the details of a specific booking for a classroom.
-PUT /schedule/laboratories/{id}/{booking_id}: Updates the details of a specific booking for a laboratory.
-DELETE /schedule/classrooms/{id}/{booking_id}: Deletes a specific booking for a classroom.
-DELETE /schedule/laboratories/{id}/{booking_id}: Deletes a specific booking for a laboratory.
-user.py:</p>
-<p>GET /users/{id}: Retrieves detailed information about a specific user.
-PUT /users/{id}: Updates the details of a specific user.
-errors.py:</p>
-<p>GET /errors/{error_code}: Retrieves detailed information about a specific error code.</p>
               
             </div>
           </div><footer>
