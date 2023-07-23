@@ -104,14 +104,18 @@
                 <h2 id="security-measures-and-authentication">Security Measures and Authentication**</h2>
 <p>Security is a critical aspect of any web application, and the Compax web app must implement robust measures to protect user data, prevent unauthorized access, and ensure secure communication between the frontend and backend. Here's an elaboration on the security measures and authentication methods used in the Compax web app:</p>
 <ul>
-<li><strong>Secure Communication (HTTPS)</strong>:</li>
+<li>
+<p><strong>Secure Communication (HTTPS)</strong>:</p>
+</li>
 <li>
 <p>All communication between the frontend and backend of the Compax web app should be encrypted using HTTPS (HTTP Secure). HTTPS ensures that data transmitted between the client and server is encrypted, preventing eavesdropping and man-in-the-middle attacks.</p>
 </li>
 <li>
 <p><strong>Authentication with JSON Web Tokens (JWT)</strong>:</p>
 </li>
-<li>JSON Web Tokens (JWT) are used for user authentication in the Compax web app. When a user successfully logs in, the backend generates a JWT containing user information and a signature. This token is then sent back to the client and included in subsequent requests as an Authorization header.</li>
+<li>
+<p>JSON Web Tokens (JWT) are used for user authentication in the Compax web app. When a user successfully logs in, the backend generates a JWT containing user information and a signature. This token is then sent back to the client and included in subsequent requests as an Authorization header.</p>
+</li>
 <li>
 <p>The server verifies the JWT's authenticity and extracts user information from it to grant access to protected endpoints. JWTs are stateless, meaning the server does not need to store session data, reducing server-side overhead.</p>
 </li>
