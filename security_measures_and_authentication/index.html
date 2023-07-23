@@ -103,83 +103,52 @@
               
                 <h2 id="security-measures-and-authentication">Security Measures and Authentication**</h2>
 <p>Security is a critical aspect of any web application, and the Compax web app must implement robust measures to protect user data, prevent unauthorized access, and ensure secure communication between the frontend and backend. Here's an elaboration on the security measures and authentication methods used in the Compax web app:</p>
-<ul>
-<li>
 <p><strong>Secure Communication (HTTPS)</strong>:</p>
-</li>
-<li>
-<p>All communication between the frontend and backend of the Compax web app should be encrypted using HTTPS (HTTP Secure). HTTPS ensures that data transmitted between the client and server is encrypted, preventing eavesdropping and man-in-the-middle attacks.</p>
-</li>
-<li>
+<ul>
+<li>All communication between the frontend and backend of the Compax web app should be encrypted using HTTPS (HTTP Secure). HTTPS ensures that data transmitted between the client and server is encrypted, preventing eavesdropping and man-in-the-middle attacks.</li>
+</ul>
 <p><strong>Authentication with JSON Web Tokens (JWT)</strong>:</p>
-</li>
-<li>
-<p>JSON Web Tokens (JWT) are used for user authentication in the Compax web app. When a user successfully logs in, the backend generates a JWT containing user information and a signature. This token is then sent back to the client and included in subsequent requests as an Authorization header.</p>
-</li>
-<li>
-<p>The server verifies the JWT's authenticity and extracts user information from it to grant access to protected endpoints. JWTs are stateless, meaning the server does not need to store session data, reducing server-side overhead.</p>
-</li>
-<li>
+<ul>
+<li>JSON Web Tokens (JWT) are used for user authentication in the Compax web app. When a user successfully logs in, the backend generates a JWT containing user information and a signature. This token is then sent back to the client and included in subsequent requests as an Authorization header.</li>
+<li>The server verifies the JWT's authenticity and extracts user information from it to grant access to protected endpoints. JWTs are stateless, meaning the server does not need to store session data, reducing server-side overhead.</li>
+</ul>
 <p><strong>Hashing and Salting Passwords</strong>:</p>
-</li>
-<li>
-<p>User passwords should never be stored in plaintext. Instead, they are hashed and salted before being stored in the database. Hashing transforms the password into an irreversible string, while salting adds additional randomness to the hashing process, making it more secure against brute-force attacks.</p>
-</li>
-<li>
+<ul>
+<li>User passwords should never be stored in plaintext. Instead, they are hashed and salted before being stored in the database. Hashing transforms the password into an irreversible string, while salting adds additional randomness to the hashing process, making it more secure against brute-force attacks.</li>
+</ul>
 <p><strong>User Roles and Permissions</strong>:</p>
-</li>
-<li>
-<p>Different user roles (regular users, administrators, exam officers) have varying levels of access to the application's functionalities. Role-based access control (RBAC) is implemented to ensure that users can only access features relevant to their roles.</p>
-</li>
-<li>
+<ul>
+<li>Different user roles (regular users, administrators, exam officers) have varying levels of access to the application's functionalities. Role-based access control (RBAC) is implemented to ensure that users can only access features relevant to their roles.</li>
+</ul>
 <p><strong>Rate Limiting</strong>:</p>
-</li>
-<li>
-<p>Rate limiting is implemented to prevent brute-force attacks and excessive API requests from a single client. By imposing limits on the number of requests a client can make within a specific time frame, the backend mitigates potential abuse.</p>
-</li>
-<li>
+<ul>
+<li>Rate limiting is implemented to prevent brute-force attacks and excessive API requests from a single client. By imposing limits on the number of requests a client can make within a specific time frame, the backend mitigates potential abuse.</li>
+</ul>
 <p><strong>Input Validation and Sanitization</strong>:</p>
-</li>
-<li>
-<p>Input validation is crucial to prevent security vulnerabilities like SQL injection and cross-site scripting (XSS). All user inputs should be validated and sanitized before processing to avoid malicious code execution.</p>
-</li>
-<li>
+<ul>
+<li>Input validation is crucial to prevent security vulnerabilities like SQL injection and cross-site scripting (XSS). All user inputs should be validated and sanitized before processing to avoid malicious code execution.</li>
+</ul>
 <p><strong>Error Handling and Logging</strong>:</p>
-</li>
-<li>
-<p>Comprehensive error handling is implemented to provide users with appropriate error messages while avoiding exposing sensitive information. Logs are generated to monitor application behavior and identify potential security issues.</p>
-</li>
-<li>
-<p><strong>Session Management (Optional)</strong>:</p>
-</li>
-<li>
-<p>While the Compax web app primarily uses stateless JWT authentication, session management can be an alternative for certain scenarios. Implementing secure session management involves handling session tokens, expiration, and ensuring secure storage.</p>
-</li>
-<li>
+<ul>
+<li>Comprehensive error handling is implemented to provide users with appropriate error messages while avoiding exposing sensitive information. Logs are generated to monitor application behavior and identify potential security issues.</li>
+</ul>
+<p>-<strong>Session Management (Optional)</strong>:</p>
+<ul>
+<li>While the Compax web app primarily uses stateless JWT authentication, session management can be an alternative for certain scenarios. Implementing secure session management involves handling session tokens, expiration, and ensuring secure storage.</li>
+</ul>
 <p><strong>Cross-Origin Resource Sharing (CORS)</strong>:</p>
-</li>
-<li>
-<p>CORS is configured on the backend to restrict cross-origin requests and prevent unauthorized access from different domains.</p>
-</li>
-<li>
+<ul>
+<li>CORS is configured on the backend to restrict cross-origin requests and prevent unauthorized access from different domains.</li>
+</ul>
 <p><strong>Content Security Policy (CSP)</strong>:</p>
-<ul>
-<li>CSP is used to specify the sources from which the application can load resources like scripts, stylesheets, and images. It helps prevent code injection attacks.</li>
-</ul>
-</li>
-<li>
+<pre><code>- CSP is used to specify the sources from which the application can load resources like scripts, stylesheets, and images. It helps prevent code injection attacks.
+</code></pre>
 <p><strong>Authentication and Authorization Middleware</strong>:</p>
-<ul>
-<li>Custom middleware can be developed and applied to endpoints to enforce authentication and authorization rules across the application.</li>
-</ul>
-</li>
-<li>
+<pre><code>- Custom middleware can be developed and applied to endpoints to enforce authentication and authorization rules across the application.
+</code></pre>
 <p><strong>Regular Security Audits</strong>:</p>
-<ul>
-<li>Regular security audits and penetration testing should be conducted to identify and address potential vulnerabilities proactively.</li>
-</ul>
-</li>
-</ul>
+<pre><code>- Regular security audits and penetration testing should be conducted to identify and address potential vulnerabilities proactively.
+</code></pre>
 <p>By implementing these security measures and authentication methods, the Compax web app can maintain a high level of security and protect user data from unauthorized access and malicious attacks. Remember that security is an ongoing process, and it's essential to stay up-to-date with security best practices and address new threats as they arise.</p>
               
             </div>
