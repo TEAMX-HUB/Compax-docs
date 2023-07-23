@@ -1,4 +1,5 @@
-## Security Measures and Authentication**
+# Security Measures and Authentication
+**********************************************************************************
 
 Security is a critical aspect of any web application, and the Compax web app must implement robust measures to protect user data, prevent unauthorized access, and ensure secure communication between the frontend and backend. Here's an elaboration on the security measures and authentication methods used in the Compax web app:
 
