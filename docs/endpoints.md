@@ -1,74 +1,55 @@
 # Endpoints for the Compax App
 **********************************************************************************
 
-Based on the provided Python files, here are the updated endpoints for the Compax web app:
+- default
 
-- admin.py:
+    - `GET / Root`
+    - `GET /search/classrooms`: Query Classrooms By Parameters
+    - `GET /search/buildings`: Query Buildings By Parameters
+    - `GET /search/labs`: Query Labs By Parameters
+    - `GET /search/offices`: Query Offices By Parameters
 
-    - `GET /admin/users`: Retrieves a list of users for administrative purposes.
-    - `PUT /admin/users/{id}`: Updates the details of a specific user for administrative purposes.
+- users
 
-- auth.py:
+    - `GET /i/{reference}` Get User By Reference
+GET /i/{uuid} Get User By Uuid
+GET /i/{username} Get User By Username
+POST /i/new Create User
+POST /i/admin/new Create Admin
+POST /i/officer/new Create Officer
 
-    - `POST /auth/register`: Registers a new user.
-    - `POST /auth/login`: Authenticates and logs in a user.
-    - `POST /auth/logout`: Logs out a user.
+- auth
+0.1.0 OAS 3.1
+GET /auth/signin Sign In
+POST /auth/signout Sign Out
+POST /auth/signup Sign Up
+POST /auth/admin/signup Sign Up Admin
+POST /auth/officer/signup Sign Up Examofficer
 
-- building.py:
+- classrooms
+GET /classrooms/ Get All Classrooms
+GET /classroom/{classroom_id} Get Classroom
+PUT /classrooms/{classroom_id} Update Classroom
+DELETE /classrooms/{classroom_id} Delete Classroom
+POST /classrooms/new Create Classroom
 
-    - `GET /buildings`: Retrieves a list of available buildings.
-    - `GET /buildings/{id}`: Retrieves detailed information about a specific building.
-    - `POST /buildings`: Creates a new building.
-    - `PUT /buildings/{id}`: Updates the details of a specific building.
-    - `DELETE /buildings/{id}`: Deletes a specific building.
+- buildings
+GET /buildings/ Get All Buildings
+GET /buildings/{building_id} Get Building
+PUT /buildings/{building_id} Update Building
+DELETE /buildings/{building_id} Delete Building
+POST /buildings/new Create Building
 
-- classroom.py:
+- labs
+GET /labs/ Get All Labs
+GET /labs/{lab_id} Get Lab
+PUT /labs/{lab_id} Update Lab
+DELETE /labs/{lab_id} Delete Lab
+POST /labs/new Create Lab
 
-    - `GET /classrooms`: Retrieves a list of available classrooms.
-    - `GET /classrooms/{id}`: Retrieves detailed information about a specific classroom.
-    - `POST /classrooms`: Creates a new classroom.
-    - `PUT /classrooms/{id}`: Updates the details of a specific classroom.
-    - `DELETE /classrooms/{id}`: Deletes a specific classroom.
-
-- laboratory.py:
-
-    - `GET /laboratories`: Retrieves a list of available laboratories.
-    - `GET /laboratories/{id}`: Retrieves detailed information about a specific laboratory.
-    - `POST /laboratories`: Creates a new laboratory.
-    - `PUT /laboratories/{id}`: Updates the details of a specific laboratory.
-    - `DELETE /laboratories/{id}`: Deletes a specific laboratory.
-
-- office.py:
-
-    - `GET /offices`: Retrieves a list of available offices.
-    - `GET /offices/{id}`: Retrieves detailed information about a specific office.
-    - `POST /offices`: Creates a new office.
-    - `PUT /offices/{id}`: Updates the details of a specific office.
-    - `DELETE /offices/{id}`: Deletes a specific office.
-
-- ratings.py:
-
-    - `GET /ratings/classrooms/{id}`: Retrieves ratings and reviews for a specific classroom.
-    - `GET /ratings/laboratories/{id}`: Retrieves ratings and reviews for a specific laboratory.
-    - `POST /ratings/classrooms/{id}`: Adds a new rating and review for a specific classroom.
-    - `POST /ratings/laboratories/{id}`: Adds a new rating and review for a specific laboratory.
-
-- schedule.py:
-
-    - `GET /schedule/classrooms/{id}`: Retrieves the schedule of bookings for a specific classroom.
-    - `GET /schedule/laboratories/{id}`: Retrieves the schedule of bookings for a specific laboratory.
-    - `POST /schedule/classrooms/{id}`: Creates a new booking for a specific classroom.
-    - `POST /schedule/laboratories/{id}`: Creates a new booking for a specific laboratory.
-    - `PUT /schedule/classrooms/{id}/{booking_id}`: Updates the details of a specific booking for a classroom.
-    - `PUT /schedule/laboratories/{id}/{booking_id}`: Updates the details of a specific booking for a laboratory.
-    - `DELETE /schedule/classrooms/{id}/{booking_id}`: Deletes a specific booking for a classroom.
-    - `DELETE /schedule/laboratories/{id}/{booking_id}`: Deletes a specific booking for a laboratory.
-
-- user.py:
-
-    - `GET /users/{id}`: Retrieves detailed information about a specific user.
-    - `PUT /users/{id}`: Updates the details of a specific user.
-
-- errors.py:
-
-    - `GET /errors/{error_code}`: Retrieves detailed information about a specific error code.
+- offices
+GET /offices/ Get All Offices
+GET /offices/{office_id} Get Office
+PUT /offices/{office_id} Update Office
+DELETE /offices/{office_id} Delete Office
+POST /offices/new Create Office
