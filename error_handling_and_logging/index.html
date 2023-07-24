@@ -128,89 +128,31 @@
 <ul>
 <li>Define custom error classes that inherit from <code>FastAPI.HTTPException</code> for various types of errors. These custom error classes allow you to provide consistent and informative error responses to the client.</li>
 </ul>
-<p>```
-   from fastapi import HTTPException</p>
 </li>
-</ul>
-<p>class NotFoundException(HTTPException):
-       def <strong>init</strong>(self, detail: str = "Not found"):
-           super().<strong>init</strong>(status_code=404, detail=detail)</p>
-<p>class UnauthorizedException(HTTPException):
-       def <strong>init</strong>(self, detail: str = "Unauthorized"):
-           super().<strong>init</strong>(status_code=401, detail=detail)
-     ```</p>
-<ul>
 <li>
 <h2 id="global-exception-handler-middleware">Global Exception Handler Middleware:</h2>
 <ul>
 <li>Implement a global exception handler middleware to catch unhandled exceptions and provide consistent error responses to the client.</li>
 </ul>
 </li>
-</ul>
-<p>```
-   from fastapi import Request
-   from fastapi.exceptions import RequestValidationError
-   from fastapi.responses import JSONResponse</p>
-<p>async def global_exception_handler(_: Request, exc: Exception) -&gt; JSONResponse:
-       if isinstance(exc, RequestValidationError):
-           return JSONResponse(
-               status_code=400,
-               content={"detail": "Validation Error", "errors": exc.errors()},
-           )
-       elif isinstance(exc, HTTPException):
-           return JSONResponse(
-               status_code=exc.status_code,
-               content={"detail": exc.detail},
-           )
-       else:
-           # Log unexpected exceptions
-           # ...</p>
-<pre><code>       return JSONResponse(
-           status_code=500,
-           content={"detail": "Server Error"},
-       )
-</code></pre>
-<p>```</p>
-<ul>
 <li>
 <h2 id="logging">Logging:</h2>
-</li>
+<ul>
 <li>Implement logging to record application events, errors, and debugging information. Use Python's built-in <code>logging</code> module or third-party libraries like <code>structlog</code> to handle logging effectively.</li>
 </ul>
-<p>```
-   import logging</p>
-<p>logging.basicConfig(level=logging.INFO)
-   logger = logging.getLogger("compax")</p>
-<p># Log an error
-   try:
-       # Code that may raise an exception
-   except Exception as e:
-       logger.exception("An error occurred:", exc_info=e)
-   ```</p>
-<ul>
-<li>
-<h2 id="request-and-response-logging">Request and Response Logging:</h2>
 </li>
 <li>
-<p>Consider logging incoming requests and outgoing responses to understand application flow and debug issues.</p>
+<h2 id="request-and-response-logging">Request and Response Logging:</h2>
+<ul>
+<li>Consider logging incoming requests and outgoing responses to understand application flow and debug issues.</li>
+</ul>
 </li>
 <li>
 <h2 id="handling-expected-errors">Handling Expected Errors:</h2>
 </li>
-<li>For known and expected errors, raise custom error classes with appropriate status codes and error details.</li>
-</ul>
-<p>```
-   from fastapi import FastAPI
-   from .errors import NotFoundException</p>
-<p>app = FastAPI()</p>
-<p>@app.get("/item/{item_id}")
-   def read_item(item_id: int):
-       item = get_item_from_database(item_id)
-       if item is None:
-           raise NotFoundException("Item not found")
-       return item
-   ```</p>
-<ul>
+<li>
+<p>For known and expected errors, raise custom error classes with appropriate status codes and error details.</p>
+</li>
 <li>
 <h2 id="unit-tests-for-error-handling">Unit Tests for Error Handling:</h2>
 </li>
