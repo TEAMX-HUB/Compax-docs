@@ -3,7 +3,7 @@
 User Interface (UI) design plays a crucial role in the success of the *Compax* web app. It involves creating visually appealing and user-friendly interfaces that allow users to interact with the application effortlessly. Here are key aspects to consider in UI design:
 
  ## User-Centered Design:
- -  Put the users at the center of the design process. Understand their needs, preferences, and pain points through user research, surveys, and usability testing. Create personas to represent different user types and design with their specific goals in mind.
+ - Put the users at the center of the design process. Understand their needs, preferences, and pain points through user research, surveys, and usability testing. Create personas to represent different user types and design with their specific goals in mind.
 
 ## Consistency and Branding: 
 - Maintain a consistent design across all pages and elements of the application. Use a cohesive color scheme, typography, and visual elements that align with the branding of the Compax app.
