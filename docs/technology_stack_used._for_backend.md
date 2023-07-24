@@ -1,4 +1,4 @@
-# Technology Stack Used
+# Technology Stack Used For Backend
 **********************************************************************************
 
 The technology stack used in the backend of the Compax web app is chosen to provide a robust, scalable, and high-performance foundation for handling API requests, managing data, and ensuring security. Here's an elaborate explanation of the technology stack components:
