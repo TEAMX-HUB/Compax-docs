@@ -103,7 +103,7 @@
               
                 <h1 id="development-environment-setup">Development Environment Setup</h1>
 <p>Setting up a development environment for the backend of the Compax web app involves installing the necessary tools and dependencies to start building and testing the API using FastAPI and Python. Below is a step-by-step guide to setting up the development environment:</p>
-<ol>
+<ul>
 <li>
 <p><strong>Install Python</strong>:</p>
 <ul>
@@ -117,11 +117,11 @@
 <li>To create a virtual environment, open your terminal or command prompt and run the following command:</li>
 </ul>
 </li>
-</ol>
+</ul>
 <p><code>bash
    python -m venv compax-env</code></p>
 <p>This will create a new virtual environment named <code>compax-env</code>.</p>
-<ol>
+<ul>
 <li>
 <p><strong>Activate the Virtual Environment</strong>:</p>
 <ul>
@@ -129,33 +129,33 @@
 </ul>
 <p><strong>Windows</strong>:</p>
 </li>
-</ol>
+</ul>
 <p><code>bash
    compax-env\Scripts\activate</code></p>
 <pre><code>  **Mac / Linux**:
 </code></pre>
 <p><code>bash
    source compax-env/bin/activate</code></p>
-<ol>
+<ul>
 <li><strong>Install Dependencies</strong>:<ul>
 <li>With the virtual environment activated, navigate to the root directory of the backend project (where <code>pyproject.toml</code> is located) and install the required dependencies using <code>poetry</code>. If you haven't installed <code>poetry</code>, follow the installation instructions from the Poetry website (https://python-poetry.org/docs/#installation).</li>
 <li>Run the following command to install the project dependencies:</li>
 </ul>
 </li>
-</ol>
+</ul>
 <p><code>bash
    poetry install</code></p>
 <p>This will install all the required packages specified in the <code>pyproject.toml</code> file.</p>
-<ol>
+<ul>
 <li><strong>Run the Development Server</strong>:<ul>
 <li>After installing the dependencies, you can run the development server using <code>uvicorn</code>, the ASGI server implementation.</li>
 </ul>
 </li>
-</ol>
+</ul>
 <p><code>bash
    uvicorn main:app --reload</code></p>
 <p>This will start the FastAPI development server, and the API will be accessible at <code>http://127.0.0.1:8000</code>.</p>
-<ol>
+<ul>
 <li>
 <p><strong>Testing the API</strong>:</p>
 <ul>
@@ -182,7 +182,7 @@
 <li>Use a version control system like Git to track changes in your code. Initialize a Git repository in the project directory and commit your code regularly.</li>
 </ul>
 </li>
-</ol>
+</ul>
 <p>By following these steps, you'll have a fully functional development environment set up for the backend of the Compax web app. You can now start building and testing the API, implementing the required endpoints, and working on other features of the web application.</p>
               
             </div>
