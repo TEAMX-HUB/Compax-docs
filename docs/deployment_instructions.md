@@ -32,24 +32,25 @@ Deploying the backend of the *Compax* web app involves making it accessible on a
    - Set up logging and monitoring tools to track application performance and identify potential issues. Tools like Prometheus and Grafana can be helpful for this purpose.
 
 ## Continuous Integration/Continuous Deployment (CI/CD):
-    - Implement a CI/CD pipeline to automate the deployment process. This ensures that changes are automatically tested, built, and deployed to the production server.
+- Implement a CI/CD pipeline to automate the deployment process. This ensures that changes are automatically tested, built, and deployed to the production server.
 
 ## Dockerize the Backend (Optional):
-    - If desired, create a Docker image of the backend application. Dockerizing the application provides a standardized deployment environment and simplifies the deployment process.
+- If desired, create a Docker image of the backend application. Dockerizing the application provides a standardized deployment environment and simplifies the deployment process.
 
 ## Load Balancing and Scaling (Optional):
-    - If you expect high traffic, set up load balancing to distribute incoming requests across multiple backend instances. Consider using auto-scaling to dynamically adjust the number of instances based on demand.
+- If you expect high traffic, set up load balancing to distribute incoming requests across multiple backend instances. Consider using auto-scaling to dynamically adjust the number of instances based on demand.
 
 ## Deploy the Backend:
-    - Upload your backend code and configurations to the production server or cloud platform.
-    - Start the ASGI server with your FastAPI application.
-    - Monitor the logs and ensure that the application is running as expected.
+- Upload your backend code and configurations to the production server or cloud platform.
+- Start the ASGI server with your FastAPI application.
+ - Monitor the logs and ensure that the application is running as expected.
 
 ## Test and Monitor:
-    - Perform thorough testing on the production environment to verify that the backend works as expected.
-    - Monitor the application continuously for performance, security, and stability.
+- Perform thorough testing on the production environment to verify that the backend works as expected.
+- Monitor the application continuously for performance, security, and stability.
 
 ## Rollback Plan:
-    - Have a rollback plan in case any issues arise during or after deployment. This ensures that you can quickly revert to the previous stable version if needed.
+- Have a rollback plan in case any issues arise during or after deployment. This ensures that you can quickly revert to the previous stable version if needed.
 
+___________________________
 Remember to document the deployment process and keep your production environment up to date with the latest security patches and software updates. Regularly review and optimize your deployment setup to maintain a reliable and efficient backend for the *Compax* web app.
