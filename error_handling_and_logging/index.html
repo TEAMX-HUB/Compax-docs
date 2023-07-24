@@ -128,7 +128,7 @@
 <ul>
 <li>Define custom error classes that inherit from <code>FastAPI.HTTPException</code> for various types of errors. These custom error classes allow you to provide consistent and informative error responses to the client.</li>
 </ul>
-<p>```bash
+<p>```
    from fastapi import HTTPException</p>
 </li>
 </ul>
@@ -147,7 +147,7 @@
 </ul>
 </li>
 </ul>
-<p>```bash
+<p>```
    from fastapi import Request
    from fastapi.exceptions import RequestValidationError
    from fastapi.responses import JSONResponse</p>
@@ -177,7 +177,7 @@
 </li>
 <li>Implement logging to record application events, errors, and debugging information. Use Python's built-in <code>logging</code> module or third-party libraries like <code>structlog</code> to handle logging effectively.</li>
 </ul>
-<p>```bash
+<p>```
    import logging</p>
 <p>logging.basicConfig(level=logging.INFO)
    logger = logging.getLogger("compax")</p>
@@ -199,7 +199,7 @@
 </li>
 <li>For known and expected errors, raise custom error classes with appropriate status codes and error details.</li>
 </ul>
-<p>```bash
+<p>```
    from fastapi import FastAPI
    from .errors import NotFoundException</p>
 <p>app = FastAPI()</p>
