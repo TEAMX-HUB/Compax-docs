@@ -3,7 +3,7 @@
 
 Testing is a critical aspect of software development to ensure the reliability and functionality of the backend of the Compax web app. Here are some testing approaches and test cases that can be used to validate the backend's behavior:
 
-## 1. Unit Testing:
+## - Unit Testing:
     - Test Cases:
      - Test individual functions and methods of the backend components in isolation.
      - Verify that each function returns the expected output for different inputs.
@@ -12,7 +12,7 @@ Testing is a critical aspect of software development to ensure the reliability a
      - Unit testing focuses on testing small units of code to identify and fix bugs at an early stage.
      - It ensures that each function or method behaves as intended and that changes in one unit do not break other parts of the code.
 
-## 2. Integration Testing:
+## - Integration Testing:
    - ## Test Cases:
      - Test the integration between different backend components, modules, and APIs.
      - Validate the flow of data and interactions between components.
@@ -20,7 +20,7 @@ Testing is a critical aspect of software development to ensure the reliability a
    - ## Purpose:
      - Integration testing ensures that the interactions between various components are working correctly, preventing integration-related issues in the final application.
 
-## 3. API Testing:
+## - API Testing:
    - ## Test Cases:
      - Test each endpoint of the API with various inputs and scenarios.
      - Verify that the API responses contain the expected data and are in the correct format (e.g., JSON).
@@ -28,7 +28,7 @@ Testing is a critical aspect of software development to ensure the reliability a
    - ## Purpose:
      - API testing ensures that the backend API is functioning correctly and providing accurate responses to client requests.
 
-## 4. Database Testing:
+## - Database Testing:
    - ## Test Cases:
      - Test CRUD (Create, Read, Update, Delete) operations on the database.
      - Verify that data is correctly stored and retrieved from the database.
@@ -36,14 +36,14 @@ Testing is a critical aspect of software development to ensure the reliability a
    - ## Purpose:
      - Database testing ensures data integrity and that the backend can interact with the database without errors.
 
-## 5. Error Handling Testing:
+## - Error Handling Testing:
    - ## Test Cases:
      - Test error scenarios and check how the backend handles unexpected situations, such as invalid input or database connection failures.
      - Verify that appropriate error codes and messages are returned in the API responses.
    - ## rpose:
      - Error handling testing ensures that the backend gracefully handles errors and provides meaningful feedback to users or client applications.
 
-## 6. Performance Testing:
+## - Performance Testing:
    - ## Test Cases:
      - Test the backend's performance under different load conditions and with large datasets.
      - Measure response times and server resource utilization.
@@ -51,7 +51,7 @@ Testing is a critical aspect of software development to ensure the reliability a
    - ## Purpose:
      - Performance testing ensures that the backend can handle the expected user load without degradation in response times.
 
-## 7. Security Testing:
+## - Security Testing:
    - ## Test Cases:
      - Test for common security vulnerabilities, such as SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF).
      - Verify that authentication and authorization mechanisms are properly implemented and protect sensitive data.
