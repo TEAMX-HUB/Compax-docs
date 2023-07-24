@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>API Design Principles - Compax Backend Api 0.1.0</title>
+    <title>Technology Stack Used - Compax Backend Api 0.1.0</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "API Design Principles";
-        var mkdocs_page_input_path = "API_design_principles.md";
+        var mkdocs_page_name = "Technology Stack Used";
+        var mkdocs_page_input_path = "technology_stack_used._for_backend.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -48,10 +48,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../001_user_interface_design/">User Interface Design</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">API Design Principles</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../API_design_principles/">API Design Principles</a>
                 </li>
               </ul>
               <ul>
@@ -90,8 +88,26 @@
                 <li class="toctree-l1"><a class="reference internal" href="../system_design/">System Design</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../technology_stack_used._for_backend/">Technology Stack Used</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Technology Stack Used</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#fastapi">FastAPI:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#python">Python:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#postgresql">PostgreSQL:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#json-web-tokens-jwt">JSON Web Tokens (JWT):</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#docker">Docker:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#uvicorn">Uvicorn:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#supabase-optional">Supabase (Optional):</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#git">Git:</a>
+    </li>
+    </ul>
                 </li>
               </ul>
       </div>
@@ -108,7 +124,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>API Design Principles</li>
+      <li>Technology Stack Used</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -117,32 +133,89 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="api-design-principles">API Design Principles</h1>
+                <h1 id="technology-stack-used">Technology Stack Used</h1>
 <hr />
-<p>When designing APIs for the Compax web app, it's important to follow these best practices to ensure consistency, ease of use, and scalability:</p>
+<p>The technology stack used in the backend of the Compax web app is chosen to provide a robust, scalable, and high-performance foundation for handling API requests, managing data, and ensuring security. Here's an elaborate explanation of the technology stack components:</p>
+<h2 id="fastapi">FastAPI:</h2>
 <ul>
 <li>
-<p>RESTful Design: Design the APIs following the principles of Representational State Transfer (REST). Use resource-based URLs and appropriate HTTP methods (GET, POST, PUT, DELETE) for operations.</p>
+<p><em>FastAPI</em> is the primary backend web framework used for building APIs with Python. It offers high performance, thanks to its asynchronous capabilities, making it suitable for handling a large number of concurrent requests.</p>
 </li>
 <li>
-<p>Endpoint Naming: Use descriptive and meaningful names for endpoints that reflect the action being performed.</p>
+<p><em>FastAPI</em> is designed to be easy to use and developer-friendly, enabling rapid development with automatic validation and interactive API documentation generation.</p>
+</li>
+</ul>
+<h2 id="python">Python:</h2>
+<ul>
+<li>
+<p><em>Python</em> is the programming language chosen for the backend development. It is known for its simplicity, readability, and versatility, making it a popular choice for web development tasks.</p>
 </li>
 <li>
-<p>Request and Response Formats: Define consistent request and response formats, such as JSON, to ensure compatibility and ease of integration with the frontend.</p>
+<p><em>FastAPI</em>, being a Python-based framework, allows developers to leverage Python's extensive ecosystem of libraries and packages for additional functionalities.</p>
+</li>
+</ul>
+<h2 id="postgresql">PostgreSQL:</h2>
+<ul>
+<li>
+<p><em>PostgreSQL</em> is the database management system used to store and manage data for the Compax web app. It is an open-source, powerful, and scalable relational database.</p>
 </li>
 <li>
-<p>Versioning: Consider versioning the APIs to maintain backward compatibility and allow for future enhancements.</p>
+<p><em>PostgreSQL</em> offers features like JSONB data type, which allows storing semi-structured data, making it suitable for scenarios where flexibility in data storage is needed.</p>
+</li>
+</ul>
+<h2 id="json-web-tokens-jwt">JSON Web Tokens (JWT):</h2>
+<ul>
+<li>
+<p>For <em>authentication</em>, the backend uses JSON Web Tokens (JWT). JWT is a stateless authentication mechanism that allows securely transmitting information between parties as JSON objects.</p>
 </li>
 <li>
-<p>Authentication and Authorization: Implement appropriate authentication and authorization mechanisms, such as token-based authentication (e.g., JWT), to secure access to protected endpoints.</p>
+<p><em>JWT tokens</em> are used to verify the identity of users and grant access to protected endpoints, ensuring secure communication between the frontend and backend.</p>
+</li>
+</ul>
+<h2 id="docker">Docker:</h2>
+<ul>
+<li>
+<p><em>Docker</em> is used for containerizing the backend application, ensuring consistency and portability across different environments.</p>
+</li>
+<li>
+<p><em>Containerization</em> with Docker allows for easy deployment and scaling, making it a popular choice for modern web application development.</p>
+</li>
+</ul>
+<h2 id="uvicorn">Uvicorn:</h2>
+<ul>
+<li>
+<p><em>Uvicorn</em> is an ASGI (Asynchronous Server Gateway Interface) server implementation used to run the FastAPI application.</p>
+</li>
+<li>
+<p><em>Uvicorn</em> provides high-performance asynchronous handling of requests, making it an excellent choice for FastAPI applications.</p>
+</li>
+</ul>
+<h2 id="supabase-optional">Supabase (Optional):</h2>
+<ul>
+<li>
+<p><em>Supabase</em> is an optional addition to the technology stack, providing real-time capabilities and authentication services.</p>
+</li>
+<li>
+<p>It can be used for features like real-time updates or user authentication, depending on the project requirements.</p>
+</li>
+</ul>
+<h2 id="git">Git:</h2>
+<ul>
+<li>
+<p><em>Git</em> is used for version control, enabling collaborative development, and keeping track of changes in the source code.</p>
+</li>
+<li>
+<p>The chosen technology stack ensures that the backend of the Compax web app is efficient, secure, and well-structured. It leverages the power of FastAPI and Python for handling API requests, PostgreSQL for data management, and JWT for secure authentication. </p>
+</li>
+<li>
+<p>Additionally, the use of Docker enables seamless deployment and scaling, while Git allows for version control and easy collaboration among developers.</p>
 </li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../001_user_interface_design/" class="btn btn-neutral float-left" title="User Interface Design"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../architecture/" class="btn btn-neutral float-right" title="Backend Architecture">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../system_design/" class="btn btn-neutral float-left" title="System Design"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -165,10 +238,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../001_user_interface_design/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../system_design/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../architecture/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
