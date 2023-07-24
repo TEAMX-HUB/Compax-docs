@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Deployment Instructions for the Backend - Compax Backend Api 0.1.0</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Deployment Instructions for the Backend";
+        var mkdocs_page_input_path = "deployment_instructions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Compax Backend Api 0.1.0
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Compax Navigation App Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../API_design_principles/">API Design Principles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../architecture/">Backend Architecture</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../database_design_and_schema/">Database Design and Schema</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Deployment Instructions for the Backend</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#choose-a-production-server">Choose a Production Server:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prepare-the-backend-code">Prepare the Backend Code:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#environment-variables-and-configuration">Environment Variables and Configuration:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#database-setup">Database Setup:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dependency-management">Dependency Management:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#web-server-and-asgi-setup">Web Server and ASGI Setup:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#security-configuration">Security Configuration:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#performance-tuning-and-caching">Performance Tuning and Caching:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logging-and-monitoring">Logging and Monitoring:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#continuous-integrationcontinuous-deployment-cicd">Continuous Integration/Continuous Deployment (CI/CD):</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dockerize-the-backend-optional">Dockerize the Backend (Optional):</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#load-balancing-and-scaling-optional">Load Balancing and Scaling (Optional):</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#deploy-the-backend">Deploy the Backend:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test-and-monitor">Test and Monitor:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rollback-plan">Rollback Plan:</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../development_environment_setup/">Development Environment Setup</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../endpoints/">Endpoints for the Compax App</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../error_handling_and_logging/">Error Handling and Logging for Backend</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../security_measures_and_authentication/">Security Measures and Authentication</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_design/">System Design</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../technology_stack_used/">Technology Stack Used</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Compax Backend Api 0.1.0</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Deployment Instructions for the Backend</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="deployment-instructions-for-the-backend">Deployment Instructions for the Backend</h1>
+<p>Deploying the backend of the <em>Compax</em> web app involves making it accessible on a production server to handle incoming requests from the frontend and clients. Below are step-by-step deployment instructions for the backend:</p>
+<h2 id="choose-a-production-server">Choose a Production Server:</h2>
+<ul>
+<li>Select a production server or cloud platform where the backend will be hosted. Common choices include AWS, Google Cloud Platform, Microsoft Azure, DigitalOcean, or Heroku. Consider factors such as scalability, performance, and pricing when making your decision.</li>
+</ul>
+<h2 id="prepare-the-backend-code">Prepare the Backend Code:</h2>
+<ul>
+<li>Ensure that the backend code is ready for deployment. This involves having the latest version of the code with all necessary configurations and dependencies.</li>
+</ul>
+<h2 id="environment-variables-and-configuration">Environment Variables and Configuration:</h2>
+<ul>
+<li>Remove any development-specific configurations and ensure that all environment variables are properly set for the production environment. Use environment variables to store sensitive information, such as database credentials and API keys.</li>
+</ul>
+<h2 id="database-setup">Database Setup:</h2>
+<ul>
+<li>If using a database server, ensure that it is properly configured and accessible from the production environment. Set up the necessary database schema and user permissions.</li>
+</ul>
+<h2 id="dependency-management">Dependency Management:</h2>
+<ul>
+<li>Make sure you have a proper dependency management system in place. In Python, you can use <code>poetry</code> or <code>pip</code> to manage dependencies. It's a good practice to use a virtual environment to isolate the dependencies.</li>
+</ul>
+<h2 id="web-server-and-asgi-setup">Web Server and ASGI Setup:</h2>
+<ul>
+<li>Deploy the backend using a production-ready ASGI server like Uvicorn or Hypercorn. These servers are designed to handle high-concurrency asynchronous requests.</li>
+<li>Ensure that the ASGI server is properly configured to run your FastAPI application.</li>
+</ul>
+<h2 id="security-configuration">Security Configuration:</h2>
+<ul>
+<li>Enable HTTPS on the production server to ensure secure communication between the client and backend. Obtain and install an SSL/TLS certificate.</li>
+<li>Implement any additional security measures, such as setting up a Web Application Firewall (WAF) to protect against common web vulnerabilities.</li>
+</ul>
+<h2 id="performance-tuning-and-caching">Performance Tuning and Caching:</h2>
+<ul>
+<li>Optimize your backend for performance by setting up caching mechanisms for frequently accessed data. Consider using Redis or Memcached for caching purposes.</li>
+</ul>
+<h2 id="logging-and-monitoring">Logging and Monitoring:</h2>
+<ul>
+<li>Set up logging and monitoring tools to track application performance and identify potential issues. Tools like Prometheus and Grafana can be helpful for this purpose.</li>
+</ul>
+<h2 id="continuous-integrationcontinuous-deployment-cicd">Continuous Integration/Continuous Deployment (CI/CD):</h2>
+<pre><code>- Implement a CI/CD pipeline to automate the deployment process. This ensures that changes are automatically tested, built, and deployed to the production server.
+</code></pre>
+<h2 id="dockerize-the-backend-optional">Dockerize the Backend (Optional):</h2>
+<pre><code>- If desired, create a Docker image of the backend application. Dockerizing the application provides a standardized deployment environment and simplifies the deployment process.
+</code></pre>
+<h2 id="load-balancing-and-scaling-optional">Load Balancing and Scaling (Optional):</h2>
+<pre><code>- If you expect high traffic, set up load balancing to distribute incoming requests across multiple backend instances. Consider using auto-scaling to dynamically adjust the number of instances based on demand.
+</code></pre>
+<h2 id="deploy-the-backend">Deploy the Backend:</h2>
+<pre><code>- Upload your backend code and configurations to the production server or cloud platform.
+- Start the ASGI server with your FastAPI application.
+- Monitor the logs and ensure that the application is running as expected.
+</code></pre>
+<h2 id="test-and-monitor">Test and Monitor:</h2>
+<pre><code>- Perform thorough testing on the production environment to verify that the backend works as expected.
+- Monitor the application continuously for performance, security, and stability.
+</code></pre>
+<h2 id="rollback-plan">Rollback Plan:</h2>
+<pre><code>- Have a rollback plan in case any issues arise during or after deployment. This ensures that you can quickly revert to the previous stable version if needed.
+</code></pre>
+<p>Remember to document the deployment process and keep your production environment up to date with the latest security patches and software updates. Regularly review and optimize your deployment setup to maintain a reliable and efficient backend for the <em>Compax</em> web app.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../database_design_and_schema/" class="btn btn-neutral float-left" title="Database Design and Schema"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../development_environment_setup/" class="btn btn-neutral float-right" title="Development Environment Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../database_design_and_schema/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../development_environment_setup/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
