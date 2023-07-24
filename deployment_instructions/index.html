@@ -180,26 +180,33 @@
 <li>Set up logging and monitoring tools to track application performance and identify potential issues. Tools like Prometheus and Grafana can be helpful for this purpose.</li>
 </ul>
 <h2 id="continuous-integrationcontinuous-deployment-cicd">Continuous Integration/Continuous Deployment (CI/CD):</h2>
-<pre><code>- Implement a CI/CD pipeline to automate the deployment process. This ensures that changes are automatically tested, built, and deployed to the production server.
-</code></pre>
+<ul>
+<li>Implement a CI/CD pipeline to automate the deployment process. This ensures that changes are automatically tested, built, and deployed to the production server.</li>
+</ul>
 <h2 id="dockerize-the-backend-optional">Dockerize the Backend (Optional):</h2>
-<pre><code>- If desired, create a Docker image of the backend application. Dockerizing the application provides a standardized deployment environment and simplifies the deployment process.
-</code></pre>
+<ul>
+<li>If desired, create a Docker image of the backend application. Dockerizing the application provides a standardized deployment environment and simplifies the deployment process.</li>
+</ul>
 <h2 id="load-balancing-and-scaling-optional">Load Balancing and Scaling (Optional):</h2>
-<pre><code>- If you expect high traffic, set up load balancing to distribute incoming requests across multiple backend instances. Consider using auto-scaling to dynamically adjust the number of instances based on demand.
-</code></pre>
+<ul>
+<li>If you expect high traffic, set up load balancing to distribute incoming requests across multiple backend instances. Consider using auto-scaling to dynamically adjust the number of instances based on demand.</li>
+</ul>
 <h2 id="deploy-the-backend">Deploy the Backend:</h2>
-<pre><code>- Upload your backend code and configurations to the production server or cloud platform.
-- Start the ASGI server with your FastAPI application.
-- Monitor the logs and ensure that the application is running as expected.
-</code></pre>
+<ul>
+<li>Upload your backend code and configurations to the production server or cloud platform.</li>
+<li>Start the ASGI server with your FastAPI application.</li>
+<li>Monitor the logs and ensure that the application is running as expected.</li>
+</ul>
 <h2 id="test-and-monitor">Test and Monitor:</h2>
-<pre><code>- Perform thorough testing on the production environment to verify that the backend works as expected.
-- Monitor the application continuously for performance, security, and stability.
-</code></pre>
+<ul>
+<li>Perform thorough testing on the production environment to verify that the backend works as expected.</li>
+<li>Monitor the application continuously for performance, security, and stability.</li>
+</ul>
 <h2 id="rollback-plan">Rollback Plan:</h2>
-<pre><code>- Have a rollback plan in case any issues arise during or after deployment. This ensures that you can quickly revert to the previous stable version if needed.
-</code></pre>
+<ul>
+<li>Have a rollback plan in case any issues arise during or after deployment. This ensures that you can quickly revert to the previous stable version if needed.</li>
+</ul>
+<hr />
 <p>Remember to document the deployment process and keep your production environment up to date with the latest security patches and software updates. Regularly review and optimize your deployment setup to maintain a reliable and efficient backend for the <em>Compax</em> web app.</p>
               
             </div>
