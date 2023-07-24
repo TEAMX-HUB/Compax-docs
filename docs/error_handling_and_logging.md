@@ -16,7 +16,7 @@ Error handling and logging are critical aspects of the backend development proce
     - Consider logging incoming requests and outgoing responses to understand application flow and debug issues.
 
 -  ## Handling Expected Errors:
-   - For known and expected errors, raise custom error classes with appropriate status codes and error details.
+    - For known and expected errors, raise custom error classes with appropriate status codes and error details.
 
 -  ## Unit Tests for Error Handling:
     - Write unit tests to ensure that the error handling and responses are working as expected.
