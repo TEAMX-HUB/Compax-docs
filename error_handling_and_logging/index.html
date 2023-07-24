@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Error handling and logging - Compax Backend Api 0.1.0</title>
+    <title>Error Handling and Logging for Backend - Compax Backend Api 0.1.0</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Error handling and logging";
+        var mkdocs_page_name = "Error Handling and Logging for Backend";
         var mkdocs_page_input_path = "error_handling_and_logging.md";
         var mkdocs_page_url = null;
       </script>
@@ -65,7 +65,23 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Error handling and logging</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Error Handling and Logging for Backend</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#custom-error-classes">Custom Error Classes:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#global-exception-handler-middleware">Global Exception Handler Middleware:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logging">Logging:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#request-and-response-logging">Request and Response Logging:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#handling-expected-errors">Handling Expected Errors:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#unit-tests-for-error-handling">Unit Tests for Error Handling:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sensitive-information-handling">Sensitive Information Handling:</a>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -94,7 +110,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>Error handling and logging</li>
+      <li>Error Handling and Logging for Backend</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -103,13 +119,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><strong>Error Handling and Logging for Backend</strong></p>
+                <h1 id="error-handling-and-logging-for-backend">Error Handling and Logging for Backend</h1>
+<hr />
 <p>Error handling and logging are critical aspects of the backend development process, ensuring that the Compax web app can identify, handle, and log errors effectively. Proper error handling provides meaningful feedback to users and helps developers identify and fix issues quickly. Here's an elaboration on error handling and logging for the backend of the Compax web app:</p>
 <ol>
-<li><strong>Custom Error Classes</strong>:</li>
+<li>
+<h2 id="custom-error-classes">Custom Error Classes:</h2>
+<ul>
 <li>Define custom error classes that inherit from <code>FastAPI.HTTPException</code> for various types of errors. These custom error classes allow you to provide consistent and informative error responses to the client.</li>
+</ul>
+</li>
 </ol>
-<p>```python
+<p>```bash
    from fastapi import HTTPException</p>
 <p>class NotFoundException(HTTPException):
        def <strong>init</strong>(self, detail: str = "Not found"):
@@ -119,10 +140,14 @@
            super().<strong>init</strong>(status_code=401, detail=detail)
    ```</p>
 <ol>
-<li><strong>Global Exception Handler Middleware</strong>:</li>
+<li>
+<h2 id="global-exception-handler-middleware">Global Exception Handler Middleware:</h2>
+<ul>
 <li>Implement a global exception handler middleware to catch unhandled exceptions and provide consistent error responses to the client.</li>
+</ul>
+</li>
 </ol>
-<p>```python
+<p>```bash
    from fastapi import Request
    from fastapi.exceptions import RequestValidationError
    from fastapi.responses import JSONResponse</p>
@@ -147,10 +172,12 @@
 </code></pre>
 <p>```</p>
 <ol>
-<li><strong>Logging</strong>:</li>
+<li>
+<h2 id="logging">Logging:</h2>
+</li>
 <li>Implement logging to record application events, errors, and debugging information. Use Python's built-in <code>logging</code> module or third-party libraries like <code>structlog</code> to handle logging effectively.</li>
 </ol>
-<p>```python
+<p>```bash
    import logging</p>
 <p>logging.basicConfig(level=logging.INFO)
    logger = logging.getLogger("compax")</p>
@@ -161,16 +188,18 @@
        logger.exception("An error occurred:", exc_info=e)
    ```</p>
 <ol>
-<li><strong>Request and Response Logging</strong>:</li>
+<li>
+<h2 id="request-and-response-logging">Request and Response Logging:</h2>
+</li>
 <li>
 <p>Consider logging incoming requests and outgoing responses to understand application flow and debug issues.</p>
 </li>
 <li>
-<p><strong>Handling Expected Errors</strong>:</p>
+<h2 id="handling-expected-errors">Handling Expected Errors:</h2>
 </li>
 <li>For known and expected errors, raise custom error classes with appropriate status codes and error details.</li>
 </ol>
-<p>```python
+<p>```bash
    from fastapi import FastAPI
    from .errors import NotFoundException</p>
 <p>app = FastAPI()</p>
@@ -182,12 +211,14 @@
        return item
    ```</p>
 <ol>
-<li><strong>Unit Tests for Error Handling</strong>:</li>
+<li>
+<h2 id="unit-tests-for-error-handling">Unit Tests for Error Handling:</h2>
+</li>
 <li>
 <p>Write unit tests to ensure that the error handling and responses are working as expected.</p>
 </li>
 <li>
-<p><strong>Sensitive Information Handling</strong>:</p>
+<h2 id="sensitive-information-handling">Sensitive Information Handling:</h2>
 </li>
 <li>Ensure that error responses do not expose sensitive information that could be used for malicious purposes.</li>
 </ol>
