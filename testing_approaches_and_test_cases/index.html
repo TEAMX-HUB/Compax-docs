@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Testing Approaches and Test Cases for Compax Backend - Compax Backend Api 0.1.0</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Testing Approaches and Test Cases for Compax Backend";
+        var mkdocs_page_input_path = "testing_approaches_and_test_cases.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Compax Backend Api 0.1.0
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Compax Navigation App Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../001_user_interface_design/">User Interface Design</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../API_design_principles/">API Design Principles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../architecture/">Backend Architecture</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../database_design_and_schema/">Database Design and Schema</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../deployment_instructions/">Deployment Instructions for the Backend</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../development_environment_setup/">Development Environment Setup</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../endpoints/">Endpoints for the Compax App</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../error_handling_and_logging/">Error Handling and Logging for Backend</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../performance_optimization_techniques_for%20backend/">Performance optimization techniques for backend</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../security_measures_and_authentication/">Security Measures and Authentication</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_design/">System Design</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../technology_stack_used._for_backend/">Technology Stack Used For Backend</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Testing Approaches and Test Cases for Compax Backend</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-unit-testing">1. Unit Testing:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#purpose">Purpose:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-integration-testing">2. Integration Testing:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test-cases">Test Cases:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#purpose_1">Purpose:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-api-testing">3. API Testing:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test-cases_1">Test Cases:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#purpose_2">Purpose:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-database-testing">4. Database Testing:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test-cases_2">Test Cases:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#purpose_3">Purpose:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-error-handling-testing">5. Error Handling Testing:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test-cases_3">Test Cases:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rpose">rpose:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-performance-testing">6. Performance Testing:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test-cases_4">Test Cases:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#purpose_4">Purpose:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-security-testing">7. Security Testing:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test-cases_5">Test Cases:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#purpose_5">Purpose:</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Compax Backend Api 0.1.0</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Testing Approaches and Test Cases for Compax Backend</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="testing-approaches-and-test-cases-for-compax-backend">Testing Approaches and Test Cases for Compax Backend</h1>
+<hr />
+<p>Testing is a critical aspect of software development to ensure the reliability and functionality of the backend of the Compax web app. Here are some testing approaches and test cases that can be used to validate the backend's behavior:</p>
+<h2 id="1-unit-testing">1. Unit Testing:</h2>
+<pre><code>- Test Cases:
+ - Test individual functions and methods of the backend components in isolation.
+ - Verify that each function returns the expected output for different inputs.
+ - Check error handling for edge cases and invalid inputs.
+</code></pre>
+<ul>
+<li>
+<h2 id="purpose">Purpose:</h2>
+<ul>
+<li>Unit testing focuses on testing small units of code to identify and fix bugs at an early stage.</li>
+<li>It ensures that each function or method behaves as intended and that changes in one unit do not break other parts of the code.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-integration-testing">2. Integration Testing:</h2>
+<ul>
+<li>
+<h2 id="test-cases">Test Cases:</h2>
+<ul>
+<li>Test the integration between different backend components, modules, and APIs.</li>
+<li>Validate the flow of data and interactions between components.</li>
+<li>Check if data is correctly passed between different layers of the backend, such as the application layer, business logic, and data access layer.</li>
+</ul>
+</li>
+<li>
+<h2 id="purpose_1">Purpose:</h2>
+<ul>
+<li>Integration testing ensures that the interactions between various components are working correctly, preventing integration-related issues in the final application.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-api-testing">3. API Testing:</h2>
+<ul>
+<li>
+<h2 id="test-cases_1">Test Cases:</h2>
+<ul>
+<li>Test each endpoint of the API with various inputs and scenarios.</li>
+<li>Verify that the API responses contain the expected data and are in the correct format (e.g., JSON).</li>
+<li>Check the handling of different HTTP methods (GET, POST, PUT, DELETE).</li>
+</ul>
+</li>
+<li>
+<h2 id="purpose_2">Purpose:</h2>
+<ul>
+<li>API testing ensures that the backend API is functioning correctly and providing accurate responses to client requests.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-database-testing">4. Database Testing:</h2>
+<ul>
+<li>
+<h2 id="test-cases_2">Test Cases:</h2>
+<ul>
+<li>Test CRUD (Create, Read, Update, Delete) operations on the database.</li>
+<li>Verify that data is correctly stored and retrieved from the database.</li>
+<li>Check the handling of data constraints, such as unique keys and foreign key relationships.</li>
+</ul>
+</li>
+<li>
+<h2 id="purpose_3">Purpose:</h2>
+<ul>
+<li>Database testing ensures data integrity and that the backend can interact with the database without errors.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-error-handling-testing">5. Error Handling Testing:</h2>
+<ul>
+<li>
+<h2 id="test-cases_3">Test Cases:</h2>
+<ul>
+<li>Test error scenarios and check how the backend handles unexpected situations, such as invalid input or database connection failures.</li>
+<li>Verify that appropriate error codes and messages are returned in the API responses.</li>
+</ul>
+</li>
+<li>
+<h2 id="rpose">rpose:</h2>
+<ul>
+<li>Error handling testing ensures that the backend gracefully handles errors and provides meaningful feedback to users or client applications.</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-performance-testing">6. Performance Testing:</h2>
+<ul>
+<li>
+<h2 id="test-cases_4">Test Cases:</h2>
+<ul>
+<li>Test the backend's performance under different load conditions and with large datasets.</li>
+<li>Measure response times and server resource utilization.</li>
+<li>Identify potential bottlenecks and areas for performance optimization.</li>
+</ul>
+</li>
+<li>
+<h2 id="purpose_4">Purpose:</h2>
+<ul>
+<li>Performance testing ensures that the backend can handle the expected user load without degradation in response times.</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-security-testing">7. Security Testing:</h2>
+<ul>
+<li>
+<h2 id="test-cases_5">Test Cases:</h2>
+<ul>
+<li>Test for common security vulnerabilities, such as SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF).</li>
+<li>Verify that authentication and authorization mechanisms are properly implemented and protect sensitive data.</li>
+</ul>
+</li>
+<li>
+<h2 id="purpose_5">Purpose:</h2>
+<ul>
+<li>Security testing ensures that the backend is secure and protects user data from unauthorized access.</li>
+</ul>
+</li>
+</ul>
+<p>Each of these testing approaches plays a vital role in ensuring the quality and reliability of the Compax backend. By thoroughly testing the application, developers can identify and fix issues early in the development process, leading to a more robust and stable backend for the Compax web app.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../technology_stack_used._for_backend/" class="btn btn-neutral float-left" title="Technology Stack Used For Backend"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../technology_stack_used._for_backend/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
