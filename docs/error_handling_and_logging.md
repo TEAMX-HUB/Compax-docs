@@ -6,22 +6,17 @@ Error handling and logging are critical aspects of the backend development proce
 -  ## Custom Error Classes:
     -  Define custom error classes that inherit from `FastAPI.HTTPException` for various types of errors. These custom error classes allow you to provide consistent and informative error responses to the client.
 
-
 -  ## Global Exception Handler Middleware:
     - Implement a global exception handler middleware to catch unhandled exceptions and provide consistent error responses to the client.
-
 
 -  ## Logging:
     - Implement logging to record application events, errors, and debugging information. Use Python's built-in `logging` module or third-party libraries like `structlog` to handle logging effectively.
 
-
 -  ## Request and Response Logging:
     - Consider logging incoming requests and outgoing responses to understand application flow and debug issues.
 
-
 -  ## Handling Expected Errors:
    - For known and expected errors, raise custom error classes with appropriate status codes and error details.
-
 
 -  ## Unit Tests for Error Handling:
     - Write unit tests to ensure that the error handling and responses are working as expected.
