@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Performance optimization techniques - Compax Backend Api 0.1.0</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Performance optimization techniques";
+        var mkdocs_page_input_path = "performance_optimization_techniques.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Compax Backend Api 0.1.0
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Compax Navigation App Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../API_design_principles/">API Design Principles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../architecture/">Backend Architecture</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../database_design_and_schema/">Database Design and Schema</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../deployment_instructions/">Deployment Instructions for the Backend</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../development_environment_setup/">Development Environment Setup</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../endpoints/">Endpoints for the Compax App</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../error_handling_and_logging/">Error Handling and Logging for Backend</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Performance optimization techniques</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../security_measures_and_authentication/">Security Measures and Authentication</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_design/">System Design</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../technology_stack_used/">Technology Stack Used</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Compax Backend Api 0.1.0</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Performance optimization techniques</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="performance-optimization-techniques">Performance Optimization Techniques</h2>
+<p>Optimizing the performance of the backend is crucial to ensure that the <em>Compax</em> web app operates efficiently and provides a smooth user experience. Below are various performance optimization techniques that can be applied to the backend:</p>
+<h2 id="caching">Caching:</h2>
+<ul>
+<li>Implement caching mechanisms to store frequently accessed data in memory, reducing the need to fetch it from the database repeatedly. Use technologies like Redis or Memcached to cache API responses or computed data.</li>
+</ul>
+<h2 id="database-optimization">Database Optimization:</h2>
+<ul>
+<li>Optimize database queries by creating indexes on frequently queried columns. Avoid inefficient queries that could lead to slow response times.</li>
+<li>Use database connection pooling to reuse existing connections, reducing the overhead of establishing new connections.</li>
+</ul>
+<h2 id="asynchronous-processing">Asynchronous Processing:</h2>
+<ul>
+<li>Utilize asynchronous programming to handle time-consuming tasks, such as sending emails or processing large datasets, without blocking the main event loop.</li>
+<li>Libraries like <code>asyncio</code> and <code>Celery</code> can help implement asynchronous processing.</li>
+</ul>
+<h2 id="load-balancing-and-scaling">Load Balancing and Scaling:</h2>
+<ul>
+<li>Distribute incoming requests across multiple backend instances using load balancers. This ensures that the application can handle increased traffic and improves reliability.</li>
+<li>Implement auto-scaling to dynamically adjust the number of backend instances based on demand.</li>
+</ul>
+<h2 id="compress-responses">Compress Responses:</h2>
+<ul>
+<li>Compress API responses using gzip or other compression algorithms to reduce the amount of data transferred over the network, resulting in faster response times.</li>
+</ul>
+<h2 id="optimize-database-queries">Optimize Database Queries:</h2>
+<ul>
+<li>Use database-specific tools to analyze and optimize the performance of database queries.</li>
+<li>Avoid retrieving unnecessary data and use pagination for large result sets.</li>
+</ul>
+<h2 id="use-cdn-for-static-assets">Use CDN for Static Assets:</h2>
+<ul>
+<li>Serve static assets (e.g., images, CSS, JS files) through a Content Delivery Network (CDN) to reduce server load and improve download times for users across the globe.</li>
+</ul>
+<h2 id="minimize-network-requests">Minimize Network Requests:</h2>
+<ul>
+<li>Reduce the number of network requests made by the frontend to the backend. Combine multiple API calls into a single request where possible.</li>
+</ul>
+<h2 id="resource-compression">Resource Compression:</h2>
+<ul>
+<li>Compress resources like CSS and JavaScript files to minimize their size, reducing the time it takes to load web pages.</li>
+</ul>
+<h2 id="http2-and-http3">HTTP/2 and HTTP/3:</h2>
+<ul>
+<li>Use HTTP/2 or HTTP/3, which support multiplexing and parallelism, to reduce latency and improve the loading speed of web pages.</li>
+</ul>
+<h2 id="optimize-middleware-usage">Optimize Middleware Usage:</h2>
+<ul>
+<li>Review and optimize the usage of middleware. Some middleware might introduce unnecessary processing overhead.</li>
+</ul>
+<h2 id="connection-pooling">Connection Pooling:</h2>
+<ul>
+<li>Implement connection pooling for external services and databases to efficiently manage and reuse connections.</li>
+</ul>
+<h2 id="use-profiling-tools">Use Profiling Tools:</h2>
+<ul>
+<li>Utilize profiling tools to identify performance bottlenecks in the code and database queries.</li>
+<li>Address the identified issues to improve the overall performance of the backend.</li>
+</ul>
+<h2 id="content-caching">Content Caching:</h2>
+<ul>
+<li>Cache frequently accessed content or dynamic API responses to reduce the need for repeated computations.</li>
+</ul>
+<h2 id="lazy-loading">Lazy Loading:</h2>
+<ul>
+<li>Adopt lazy loading for components and resources on the frontend to load them only when required, reducing initial page load times.</li>
+</ul>
+<h2 id="optimize-images">Optimize Images:</h2>
+<ul>
+<li>Optimize images by compressing and resizing them without compromising quality. Use modern image formats like WebP to reduce image sizes.</li>
+</ul>
+<hr />
+<p>By employing these performance optimization techniques, the Compax web app's backend can deliver faster response times, reduce server load, and provide a seamless user experience. Regularly monitor the application's performance to identify areas for further improvement and ensure consistent high performance as the application scales.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../error_handling_and_logging/" class="btn btn-neutral float-left" title="Error Handling and Logging for Backend"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../security_measures_and_authentication/" class="btn btn-neutral float-right" title="Security Measures and Authentication">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../error_handling_and_logging/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../security_measures_and_authentication/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
