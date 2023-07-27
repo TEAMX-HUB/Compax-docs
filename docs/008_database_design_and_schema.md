@@ -8,7 +8,7 @@ The database design and schema for the Compax web app are crucial components tha
 
 An Entity-Relationship Diagram (ERD) is a visual representation of the database schema, showing the entities (tables) and their relationships. The ERD for the Compax web app might include the following entities:
 
-![Database Schema ER Diagram](../assets/layout.png)
+![Database Schema ER Diagram](../docs/assets/layout.png)
 
 ### Table Structure and Data Types
 
