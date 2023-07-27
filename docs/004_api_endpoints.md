@@ -1,4 +1,5 @@
 # API Design Principles
+
 **********************************************************************************
 When designing APIs for the Compax web app, it's important to follow these best practices to ensure consistency, ease of use, and scalability:
 

@@ -1,38 +1,24 @@
 # Welcome to Compax Navigation App Documentation
 
 ## Introduction
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-- Project Overview: The Classroom Finder web app is a platform that allows users to search for available classrooms and make reservations in educational institutions.
 
-- Purpose of the Document: This document serves as a comprehensive guide for the development, deployment, and maintenance of the Classroom Finder app.
-    
-- Document Conventions: N/A (Provide any specific document conventions, if applicable)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Frontend Documentation
-**********************************************************************************
+Project Overview: The Classroom Finder web app is a platform that allows users to search for available classrooms and make reservations in educational institutions.
 
-- User Interface Design
-- Technology Stack and Frameworks Used
--  Component Hierarchy and Structure
-- State Management (e.g., Redux)
-- Routing and Navigation
-- Responsive Design and Mobile Responsiveness
-- Form Validation and Error Handling
-- Testing Approaches and Test Cases
-- Performance Optimization Techniques
-- Deployment Instructions
+Purpose of the Document: This document serves as a comprehensive guide for the development, deployment, and maintenance of the Classroom Finder app.
 
+The structure of flow is highlighted below. You can directly use the content as a step by step tutorial on how we built this product, how we would maintain, and the principles behind the workflow.
 
-## Backend Documentation
-**********************************************************************************
+## Architecture and System Design
 
-- Architecture and System Design
-- APIs and Endpoints
 - Technology Stack Used
-- Development Environment Setup
-- Database Design and Schema
 - Security Measures and Authentication
+
+## Development Environment Setup
+
+- Database Design and Schema
+- APIs and Endpoints
 - Error Handling and Logging
 - Testing Approaches and Test Cases
-- Performance Optimization Techniques
 - Deployment Instructions
