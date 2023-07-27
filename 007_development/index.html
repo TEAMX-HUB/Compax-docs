@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Project Development - Compax Backend Api 0.1.0</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Project Development";
+        var mkdocs_page_input_path = "007_development.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Compax Backend Api 0.1.0
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Compax Navigation App Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../002_architecture/">Architecture and System Design</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../003_technology_stack_used._for_backend/">Technology Stack</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../004_api_endpoints/">API Design Principles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../005_security_measures_and_authentication/">Security</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Project Development</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connecting-databases">Connecting Databases</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../008_database_design_and_schema/">Database Design</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../009_endpoints/">API</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../010_error_handling_and_logging/">Error Handling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../011_testing_approaches_and_test_cases/">Testing</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../012_deployment_instructions/">Deployment</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Compax Backend Api 0.1.0</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Project Development</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="project-development">Project Development</h1>
+<p>Setting up a development environment for the backend of the Compax web app involves installing the necessary tools and dependencies to start building and testing the API using FastAPI and Python. Below is a step-by-step guide to setting up the development environment:</p>
+<h2 id="dependencies">Dependencies</h2>
+<hr />
+<p>Ensure that Python is installed on your system. FastAPI requires Python 3.9 or higher. You can download the latest version of Python from the official Python website (<a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>). Follow the installation instructions for your operating system. You would need a project dependency and packaging management to efficiently be able to manage all dependencies that's why Poetry is our preferred tool for managing this project.</p>
+<p><strong>Install Dependencies</strong>:</p>
+<p>It's recommended to create a virtual environment for isolating the project's dependencies. This ensures that the dependencies for the Compax web app won't interfere with other projects.</p>
+<p>Navigate to the root directory of the project (where <code>pyproject.toml</code> is located) and install the required dependencies using Poetry. If you haven't installed Poetry, follow the installation instructions from the Poetry website (<a href="https://python-poetry.org/docs/#installation">https://python-poetry.org/docs/#installation</a>).</p>
+<p>Create a virtual environment with Poetry by invoking the following command: <code>poetry shell</code></p>
+<p>This would create <code>.venv</code> directory or cached virtual environment depending on the configurations set for the tool. While your project environment has been successfully created, poetry will automatically try to activate the environment. If you do not see any such thing; proceed to activate the environment using the following commands.</p>
+<p><strong>Windows</strong>:   <code>compax-env\Scripts\activate</code></p>
+<p><strong>Mac / Linux</strong>:    <code>source compax-env/bin/activate</code></p>
+<p>Run the following command to install the project dependencies:  <code>poetry install</code></p>
+<p>This will install all the required packages specified in the <code>pyproject.toml</code> file.</p>
+<hr />
+<p><strong>Run Server</strong>:</p>
+<p>After installing the dependencies, you can run the development server using <code>uvicorn</code>, the ASGI server implementation.</p>
+<p><code>uvicorn main:app --reload</code></p>
+<p>This will start the FastAPI development server, and the API will be accessible at <code>http://127.0.0.1:8000</code>.</p>
+<p><strong>Testing</strong>:</p>
+<p>With the development server running, you can now test the API using tools like <code>curl</code>, Postman, or any API testing tool of your choice. For an interactive API documentation, open your web browser and go to <code>http://127.0.0.1:8000/api/bare/docs</code>. This will display the automatically generated Swagger documentation, where you can explore the available endpoints and test them interactively.</p>
+<h2 id="connecting-databases">Connecting Databases</h2>
+<hr />
+<p><strong>Database Configuration</strong>:</p>
+<p>Ensure that you have PostgreSQL installed and running on your system or in a docker instance or on a remote database instance (because we used Supabase for all our PostgreSQL database interactions). To communicate with your database, a connection url or the database details are usually stored in an <code>.env</code> as show below and retrieved for any level of interaction.</p>
+<pre><code class="language-toml">ENV_NAME='development'
+SUPABASE_CLIENT_URL='client_url_authentication'
+SUPABASE_CLIENT_KEY='client_anon_key_authentication'
+DB_URL='supabase_instance_dsn'
+DB_NAME='supabase'
+DB_USER='supabase'
+DB_PASSWORD='very_long_password'
+DB_HOST='supabase_instance_link'
+DB_PORT='normal_port'
+
+</code></pre>
+<p>Update the database settings in the backend code to point to your PostgreSQL database. The information is then retrieved from the <strong>gitignored <code>.env</code></strong> and passed along to anywhere it is needed in the code with a cache wrapper.</p>
+<pre><code class="language-python">from functools import lru_cache
+from pathlib import Path
+
+from pydantic import BaseSettings
+
+cwd = Path.cwd()
+base_env = cwd / &quot;.env&quot;
+prod_env = cwd / &quot;prod.env&quot;
+
+
+class Settings(BaseSettings):
+    env_name: str = &quot;&quot;
+    supabase_client_url: str = &quot;&quot;
+    supabase_client_key: str = &quot;&quot;
+    db_url: str = &quot;&quot;
+    db_name: str = &quot;&quot;
+    db_user: str = &quot;&quot;
+    db_port: int = 0
+    db_password: str = &quot;&quot;
+    db_host: str = &quot;&quot;
+
+    class Config:
+        # allows the import of environment variables from .env
+        # env file has variables included as attributes in
+        # this class and more. you can decide to go with the
+        # default preset used above or set your own .env file
+        env_file = base_env
+        env_file_encoding = &quot;utf-8&quot;
+
+
+@lru_cache
+def get_settings() -&gt; Settings:
+    settings = Settings()
+    return settings
+</code></pre>
+<p><strong>Implement Endpoints and Features</strong>:</p>
+<p>With the development environment set up, you can now start implementing the various endpoints and features required for the Compax web app. Use the provided Python files (<code>admin.py</code>, <code>auth.py</code>, <code>building.py</code>, etc.) as a starting point and customize them based on your project requirements.</p>
+<p><strong>Version Control</strong>:</p>
+<p>Use a version control system like Git to track changes in your code. Initialize a Git repository in the project directory and commit your code regularly.</p>
+<p>By following these steps, you'll have a fully functional development environment set up for the backend of the Compax web app. You can now start building and testing the API, implementing the required endpoints, and working on other features of the web application.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../005_security_measures_and_authentication/" class="btn btn-neutral float-left" title="Security"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../008_database_design_and_schema/" class="btn btn-neutral float-right" title="Database Design">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../005_security_measures_and_authentication/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../008_database_design_and_schema/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

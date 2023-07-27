@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Endpoints for the Compax App - Compax Backend Api 0.1.0</title>
+    <title>API - Compax Backend Api 0.1.0</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Endpoints for the Compax App";
-        var mkdocs_page_input_path = "endpoints.md";
+        var mkdocs_page_name = "API";
+        var mkdocs_page_input_path = "009_endpoints.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -45,57 +45,45 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../001_user_interface_design/">User Interface Design</a>
+                <li class="toctree-l1"><a class="reference internal" href="../002_architecture/">Architecture and System Design</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../API_design_principles/">API Design Principles</a>
+                <li class="toctree-l1"><a class="reference internal" href="../003_technology_stack_used._for_backend/">Technology Stack</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../architecture/">Backend Architecture</a>
+                <li class="toctree-l1"><a class="reference internal" href="../004_api_endpoints/">API Design Principles</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../database_design_and_schema/">Database Design and Schema</a>
+                <li class="toctree-l1"><a class="reference internal" href="../005_security_measures_and_authentication/">Security</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../deployment_instructions/">Deployment Instructions for the Backend</a>
+                <li class="toctree-l1"><a class="reference internal" href="../007_development/">Project Development</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../development_environment_setup/">Development Environment Setup</a>
+                <li class="toctree-l1"><a class="reference internal" href="../008_database_design_and_schema/">Database Design</a>
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Endpoints for the Compax App</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">API</a>
     <ul class="current">
     </ul>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../error_handling_and_logging/">Error Handling and Logging for Backend</a>
+                <li class="toctree-l1"><a class="reference internal" href="../010_error_handling_and_logging/">Error Handling</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../performance_optimization_techniques_for%20backend/">Performance optimization techniques for backend</a>
+                <li class="toctree-l1"><a class="reference internal" href="../011_testing_approaches_and_test_cases/">Testing</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../security_measures_and_authentication/">Security Measures and Authentication</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../system_design/">System Design</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../technology_stack_used._for_backend/">Technology Stack Used For Backend</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../testing_approaches_and_test_cases/">Testing Approaches and Test Cases for Compax Backend</a>
+                <li class="toctree-l1"><a class="reference internal" href="../012_deployment_instructions/">Deployment</a>
                 </li>
               </ul>
       </div>
@@ -112,7 +100,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>Endpoints for the Compax App</li>
+      <li>API</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -121,87 +109,99 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="endpoints-for-the-compax-app">Endpoints for the Compax App</h1>
+                <h1 id="api">API</h1>
 <hr />
 <ul>
 <li>
 <p>default</p>
-<ul>
-<li><code>GET / Root</code></li>
+</li>
+<li>
+<p><code>GET / Root</code></p>
+</li>
 <li><code>GET /search/classrooms</code>: Query Classrooms By Parameters</li>
 <li><code>GET /search/buildings</code>: Query Buildings By Parameters</li>
 <li><code>GET /search/labs</code>: Query Labs By Parameters</li>
-<li><code>GET /search/offices</code>: Query Offices By Parameters</li>
-</ul>
+<li>
+<p><code>GET /search/offices</code>: Query Offices By Parameters</p>
 </li>
 <li>
 <p>users</p>
-<ul>
-<li><code>GET /i/{reference}</code>: Get User By Reference</li>
+</li>
+<li>
+<p><code>GET /i/{reference}</code>: Get User By Reference</p>
+</li>
 <li><code>GET /i/{uuid}</code>: Get User By Uuid</li>
 <li><code>GET /i/{username}</code>: Get User By Username</li>
 <li><code>POST /i/new</code>: Create User</li>
 <li><code>POST /i/admin/new</code>: Create Admin</li>
-<li><code>POST /i/officer/new</code>: Create Officer</li>
-</ul>
+<li>
+<p><code>POST /i/officer/new</code>: Create Officer</p>
 </li>
 <li>
 <p>auth</p>
-<ul>
-<li><code>GET /auth/signin</code>: Sign In</li>
+</li>
+<li>
+<p><code>GET /auth/signin</code>: Sign In</p>
+</li>
 <li><code>POST /auth/signout</code>: Sign Out</li>
 <li><code>POST /auth/signup</code>: Sign Up</li>
 <li><code>POST /auth/admin/signup</code>: Sign Up Admin</li>
-<li><code>POST /auth/officer/signup</code>: Sign Up Examofficer</li>
-</ul>
+<li>
+<p><code>POST /auth/officer/signup</code>: Sign Up Examofficer</p>
 </li>
 <li>
 <p>classrooms</p>
-<ul>
-<li><code>GET /classrooms/</code>: Get All Classrooms</li>
+</li>
+<li>
+<p><code>GET /classrooms/</code>: Get All Classrooms</p>
+</li>
 <li><code>GET /classroom/{classroom_id}</code>: Get Classroom</li>
 <li><code>PUT /classrooms/{classroom_id}</code>: Update Classroom</li>
 <li><code>DELETE /classrooms/{classroom_id}</code>: Delete Classroom</li>
-<li><code>POST /classrooms/new</code>: Create Classroom</li>
-</ul>
+<li>
+<p><code>POST /classrooms/new</code>: Create Classroom</p>
 </li>
 <li>
 <p>buildings</p>
-<ul>
-<li><code>GET /buildings/</code>: Get All Buildings</li>
+</li>
+<li>
+<p><code>GET /buildings/</code>: Get All Buildings</p>
+</li>
 <li><code>GET /buildings/{building_id}</code>: Get Building</li>
 <li><code>PUT /buildings/{building_id}</code>: Update Building</li>
 <li><code>DELETE /buildings/{building_id}</code>: Delete Building</li>
-<li><code>POST /buildings/new</code>: Create Building</li>
-</ul>
+<li>
+<p><code>POST /buildings/new</code>: Create Building</p>
 </li>
 <li>
 <p>labs</p>
-<ul>
-<li><code>GET /labs</code>: Get All Labs</li>
+</li>
+<li>
+<p><code>GET /labs</code>: Get All Labs</p>
+</li>
 <li><code>GET /labs/{lab_id}</code>: Get Lab</li>
 <li><code>PUT /labs/{lab_id}</code>: Update Lab</li>
 <li><code>DELETE /labs/{lab_id}</code>: Delete Lab</li>
-<li><code>POST /labs/new</code>: Create Lab</li>
-</ul>
+<li>
+<p><code>POST /labs/new</code>: Create Lab</p>
 </li>
 <li>
 <p>offices</p>
-<ul>
-<li><code>GET /offices</code>: Get All Offices</li>
+</li>
+<li>
+<p><code>GET /offices</code>: Get All Offices</p>
+</li>
 <li><code>GET /offices/{office_id}</code>: Get Office</li>
 <li><code>PUT /offices/{office_id}</code>: Update Office</li>
 <li><code>DELETE /offices/{office_id}</code>: Delete Office</li>
 <li><code>POST /offices/new</code>: Create Office</li>
 </ul>
-</li>
-</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../development_environment_setup/" class="btn btn-neutral float-left" title="Development Environment Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../error_handling_and_logging/" class="btn btn-neutral float-right" title="Error Handling and Logging for Backend">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../008_database_design_and_schema/" class="btn btn-neutral float-left" title="Database Design"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../010_error_handling_and_logging/" class="btn btn-neutral float-right" title="Error Handling">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -224,10 +224,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../development_environment_setup/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../008_database_design_and_schema/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../error_handling_and_logging/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../010_error_handling_and_logging/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

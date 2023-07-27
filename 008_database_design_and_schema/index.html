@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Database Design - Compax Backend Api 0.1.0</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Database Design";
+        var mkdocs_page_input_path = "008_database_design_and_schema.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Compax Backend Api 0.1.0
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Compax Navigation App Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../002_architecture/">Architecture and System Design</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../003_technology_stack_used._for_backend/">Technology Stack</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../004_api_endpoints/">API Design Principles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../005_security_measures_and_authentication/">Security</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../007_development/">Project Development</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Database Design</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#entity-relationship-diagram-erd">Entity-Relationship Diagram (ERD)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#table-structure-and-data-types">Table Structure and Data Types</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#users">Users</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#geometry-tables">Geometry Tables</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#evaluation-tables">Evaluation Tables</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#scheduling-tables">Scheduling Tables</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#normalization-and-data-integrity">Normalization and Data Integrity</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#indexes-and-performance-optimization">Indexes and Performance Optimization</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../009_endpoints/">API</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../010_error_handling_and_logging/">Error Handling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../011_testing_approaches_and_test_cases/">Testing</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../012_deployment_instructions/">Deployment</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Compax Backend Api 0.1.0</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Database Design</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="database-design">Database Design</h1>
+<p>The database design and schema for the Compax web app are crucial components that define the structure and organization of data within the application. A well-designed database schema ensures efficient data storage, retrieval, and integrity. Below is an elaboration of the database design and schema for the Compax web app.</p>
+<hr />
+<h2 id="entity-relationship-diagram-erd">Entity-Relationship Diagram (ERD)</h2>
+<p>An Entity-Relationship Diagram (ERD) is a visual representation of the database schema, showing the entities (tables) and their relationships. The ERD for the Compax web app might include the following entities:</p>
+<p><img alt="Database Schema ER Diagram" src="../assets/layout.png" /></p>
+<h3 id="table-structure-and-data-types">Table Structure and Data Types</h3>
+<p>The table structure for each entity in the database is defined by specifying the columns (attributes) and their corresponding data types. For example:</p>
+<h4 id="users">Users</h4>
+<p>This table stores information about the users of the system, including their username, student reference number, department, year group, password, and whether they are a class rep, admin, or exams officer.</p>
+<pre><code>```sql
+create table
+public.users (
+    id uuid not null,
+    username text not null,
+    student_reference bigint not null,
+    department text not null default ''::text,
+    year_group smallint null,
+    password text not null,
+    is_classrep boolean null,
+    is_admin boolean null,
+    created_at timestamp without time zone null default (now() at time zone 'utc'::text),
+    is_deleted boolean null,
+    is_exams_officer boolean null,
+    constraint users_pkey primary key (id),
+    constraint users_password_key unique (password),
+    constraint users_student_reference_key unique (student_reference),
+    constraint users_username_key unique (username),
+    constraint users_id_fkey foreign key (id) references auth.users (id),
+    constraint users_year_group_check check (
+    (
+        (year_group &lt; 7)
+        and (year_group &gt; 0)
+    )
+    )
+) tablespace pg_default;
+```
+</code></pre>
+<h4 id="geometry-tables">Geometry Tables</h4>
+<p>These tables store geometric data about the buildings, classrooms, and laboratories on campus. The buildings table stores information about the name, building type, number of floors, number of classrooms, and number of laboratories in each building. The classrooms table stores information about the name, room number, and floor number of each classroom. The laboratories table stores information about the lab reference, floor number, and building ID of each laboratory.</p>
+<p>Buildings</p>
+<pre><code>```sql
+create table
+public.buildings (
+    id bigint generated by default as identity,
+    name text not null,
+    building_type text null,
+    n_floors bigint not null default '0'::bigint,
+    n_classrooms bigint not null default '0'::bigint,
+    n_labs bigint not null default '0'::bigint,
+    geom geometry null,
+    building_id bigint null,
+    image_url text[] null,
+    constraint buildings_pkey primary key (id),
+    constraint buildings_geom_key unique (geom),
+    constraint buildings_name_key unique (name),
+    constraint buildings_building_id_fkey foreign key (building_id) references buildings (id) on delete cascade
+) tablespace pg_default;
+```
+</code></pre>
+<p>Classrooms</p>
+<pre><code>```sql
+create table
+public.classrooms (
+    id bigint generated by default as identity,
+    name text null,
+    room_number bigint null,
+    floor_number bigint null,
+    geom geometry null,
+    building_id bigint null,
+    image_url text[] null,
+    constraint classrooms_pkey primary key (id),
+    constraint classrooms_name_key unique (name),
+    constraint classrooms_building_id_fkey foreign key (building_id) references buildings (id) on delete cascade
+) tablespace pg_default;
+```
+</code></pre>
+<p>Laboratories</p>
+<pre><code>```sql
+create table
+public.laboratories (
+    id bigint generated by default as identity,
+    lab_reference text not null,
+    floor_number bigint null default '0'::bigint,
+    geom geometry null,
+    building_id bigint null,
+    image_url text[] null,
+    constraint laboratories_pkey primary key (id),
+    constraint laboratories_geom_key unique (geom),
+    constraint laboratories_lab_reference_key unique (lab_reference),
+    constraint laboratories_building_id_fkey foreign key (building_id) references buildings (id) on delete cascade
+) tablespace pg_default;
+```
+</code></pre>
+<p>Offices</p>
+<h4 id="evaluation-tables">Evaluation Tables</h4>
+<p>These tables store information about the ratings that users have given to different aspects of the university. The ratings table stores the rating, comment, and timestamp for each rating.</p>
+<p>Ratings</p>
+<pre><code>```sql
+create table
+public.ratings (
+    id bigint generated by default as identity,
+    comments text not null default ''::text,
+    building_id bigint null,
+    classroom_id bigint null,
+    office_id bigint null,
+    lab_id bigint null,
+    rate_value integer not null,
+    constraint ratings_pkey primary key (id),
+    constraint ratings_building_id_fkey foreign key (building_id) references buildings (id),
+    constraint ratings_classroom_id_fkey foreign key (classroom_id) references classrooms (id),
+    constraint ratings_lab_id_fkey foreign key (lab_id) references laboratories (id),
+    constraint ratings_office_id_fkey foreign key (office_id) references offices (id),
+    constraint ratings_rate_value_check check (
+    (
+        (rate_value &lt; 6)
+        and (rate_value &gt; 0)
+    )
+    )
+) tablespace pg_default;
+```
+</code></pre>
+<h4 id="scheduling-tables">Scheduling Tables</h4>
+<p>These tables store information about the academic events that take place on campus. The academic_event_week table stores information about the weekday, department, schedule ID, and track ID for each academic event week. The academic_track table stores information about the semester, semester start date, semester end date, and academic year for each academic track. The session_schedule table stores information about the course code, course name, year group, schedule time, class location, and lab location for each session schedule. The session_time table stores information about the start time and end time for each session time.</p>
+<p>Academic Event Week</p>
+<pre><code>```sql
+create table
+public.academic_event_week (
+    id bigint generated by default as identity,
+    weekday text null,
+    department text null,
+    schedule_id bigint null,
+    track_id bigint null,
+    constraint academic_event_week_pkey primary key (id),
+    constraint academic_event_week_schedule_id_fkey foreign key (schedule_id) references session_schedule (id),
+    constraint academic_event_week_track_id_fkey foreign key (track_id) references academic_track (id)
+) tablespace pg_default;
+```
+</code></pre>
+<p>Academic Track</p>
+<pre><code>```sql
+create table
+public.academic_track (
+    id bigint generated by default as identity,
+    semester bigint null,
+    semester_start date null,
+    semester_end date null,
+    academic_year text null,
+    constraint academic_track_pkey primary key (id)
+) tablespace pg_default;
+```
+</code></pre>
+<p>Session Schedule</p>
+<pre><code>```sql
+create table
+public.session_schedule (
+    id bigint generated by default as identity,
+    course_code text null,
+    course_name text null,
+    year_group bigint null,
+    schedule_time bigint null,
+    class_location bigint null,
+    lab_location bigint null,
+    constraint session_schedule_pkey primary key (id),
+    constraint session_schedule_class_location_fkey foreign key (class_location) references classrooms (id),
+    constraint session_schedule_lab_location_fkey foreign key (lab_location) references laboratories (id),
+    constraint session_schedule_schedule_time_fkey foreign key (schedule_time) references session_time (id) on delete cascade
+) tablespace pg_default;
+```
+</code></pre>
+<p>Session Time</p>
+<pre><code>```sql
+create table
+public.session_time (
+    id bigint generated by default as identity,
+    start_time time without time zone null,
+    end_time time without time zone null,
+    constraint session_time_pkey primary key (id)
+) tablespace pg_default;
+```
+</code></pre>
+<p>The choice of data types for each column ensures that the database efficiently stores and retrieves the data, while also enforcing data integrity constraints.</p>
+<h2 id="normalization-and-data-integrity">Normalization and Data Integrity</h2>
+<p>Database normalization is applied to ensure data integrity and to reduce data redundancy. The schema is organized into multiple tables, with each table focused on a specific entity. Relationships between entities are established using foreign keys, maintaining referential integrity.</p>
+<h2 id="indexes-and-performance-optimization">Indexes and Performance Optimization</h2>
+<p>Proper indexing is essential for improving query performance. Indexes are created on columns that are frequently used for filtering or searching data, such as the user ID, building ID, classroom ID, etc. Additionally, unique constraints and primary keys help maintain data uniqueness and integrity.</p>
+<p>The database design and schema should be carefully planned and optimized to meet the specific requirements of the Compax web app. Regular backups and maintenance procedures should be implemented to ensure data reliability and security.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../007_development/" class="btn btn-neutral float-left" title="Project Development"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../009_endpoints/" class="btn btn-neutral float-right" title="API">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../007_development/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../009_endpoints/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
