@@ -6,8 +6,8 @@ The technology stack used in the backend of the Compax web app is chosen to prov
 
 ## Programming Language
 
-### Python
-
+### [Python](https://www.python.org)
+<a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="30" height="30"/> </a>
 *Python* is the programming language chosen for the backend development. It is known for its simplicity, readability, and versatility, making it a popular choice for web development tasks.
 
 *FastAPI*, being a Python-based framework, allows developers to leverage Python's extensive ecosystem of libraries and packages for additional functionalities.
