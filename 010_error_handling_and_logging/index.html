@@ -130,9 +130,76 @@
 <li>
 <h2 id="custom-error-classes">Custom Error Classes</h2>
 </li>
-<li>
-<p>Define custom error classes that inherit from <code>FastAPI.HTTPException</code> for various types of errors. These custom error classes allow you to provide consistent and informative error responses to the client.</p>
-</li>
+</ul>
+<pre><code class="language-python">
+from fastapi import HTTPException
+
+class CompaxException(HTTPException):
+    def __init__(self, status_code: int, detail: str):
+        super().__init__(status_code, detail=detail)
+
+class BuildingNotFoundException(CompaxException):
+    def __init__(self, building_id: str):
+        detail = f&quot;Building with ID {building_id} not found.&quot;
+        super().__init__(status_code=404, detail=detail)
+
+class ClassroomNotFoundException(CompaxException):
+    def __init__(self, classroom_id: str):
+        detail = f&quot;Classroom with ID {classroom_id} not found.&quot;
+        super().__init__(status_code=404, detail=detail)
+
+class LaboratoryNotFoundException(CompaxException):
+    def __init__(self, laboratory_id: str):
+        detail = f&quot;Laboratory with ID {laboratory_id} not found.&quot;
+        super().__init__(status_code=404, detail=detail)
+
+class OfficeNotFoundException(CompaxException):
+    def __init__(self, office_id: str):
+        detail = f&quot;Office with ID {office_id} not found.&quot;
+        super().__init__(status_code=404, detail=detail)
+
+class UserNotFoundException(CompaxException):
+    def __init__(self, message: str):
+        detail = f&quot;{message}&quot;
+        super().__init__(status_code=404, detail=detail)
+
+class UserReferenceFoundException(CompaxException):
+    def __init__(self, ref: int):
+        detail = f&quot;User with Reference {int} not found.&quot;
+        super().__init__(status_code=404, detail=detail)
+
+class UserNameNotFoundException(CompaxException):
+    def __init__(self, username: str):
+        detail = f&quot;User with name {username} not found.&quot;
+        super().__init__(status_code=404, detail=detail)
+
+class AuthInvalidCredentialsException(CompaxException):
+    def __init__(self):
+        super().__init__(
+            status_code=401,
+            detail=&quot;Invalid credentials. &quot;
+            + &quot;User might exist. User with reference might exist. &quot;
+            + &quot;User year group might be Incorrect&quot;,
+        )
+
+class InvalidRatingException(CompaxException):
+    def __init__(self):
+        super().__init__(
+            status_code=401,
+            detail=&quot;Invalid credentials. Details Provided might incorrect!&quot;,
+        )
+
+class UnauthorizedException(CompaxException):
+    def __init__(self):
+        super().__init__(status_code=403, detail=&quot;Unauthorized access.&quot;)
+
+class BookingNotFoundException(CompaxException):
+    def __init__(self, booking_id: str):
+        detail = f&quot;Booking with ID {booking_id} not found.&quot;
+        super().__init__(status_code=404, detail=detail)
+
+</code></pre>
+<ul>
 <li>
 <h2 id="global-exception-handler-middleware">Global Exception Handler Middleware</h2>
 </li>
