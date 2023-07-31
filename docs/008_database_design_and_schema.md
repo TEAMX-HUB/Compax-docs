@@ -209,9 +209,3 @@ Session Time
 ## Normalization and Data Integrity
 
 Database normalization is applied to ensure data integrity and to reduce data redundancy. The schema is organized into multiple tables, with each table focused on a specific entity. Relationships between entities are established using foreign keys, maintaining referential integrity.
-
-## Indexes and Performance Optimization
-
-Proper indexing is essential for improving query performance. Indexes are created on columns that are frequently used for filtering or searching data, such as the user ID, building ID, classroom ID, etc. Additionally, unique constraints and primary keys help maintain data uniqueness and integrity.
-
-The database design and schema should be carefully planned and optimized to meet the specific requirements of the Compax web app. Regular backups and maintenance procedures should be implemented to ensure data reliability and security.
