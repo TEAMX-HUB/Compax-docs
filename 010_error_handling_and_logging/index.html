@@ -77,18 +77,6 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#custom-error-classes">Custom Error Classes</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#global-exception-handler-middleware">Global Exception Handler Middleware</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#request-and-response-logging">Request and Response Logging</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#handling-expected-errors">Handling Expected Errors</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#unit-tests-for-error-handling">Unit Tests for Error Handling</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sensitive-information-handling">Sensitive Information Handling</a>
-    </li>
     </ul>
                 </li>
               </ul>
@@ -132,48 +120,46 @@
 </li>
 </ul>
 <pre><code class="language-python">
-from fastapi import HTTPException
-
 class CompaxException(HTTPException):
     def __init__(self, status_code: int, detail: str):
         super().__init__(status_code, detail=detail)
-
-class BuildingNotFoundException(CompaxException):
+</code></pre>
+<pre><code class="language-python">class BuildingNotFoundException(CompaxException):
     def __init__(self, building_id: str):
         detail = f&quot;Building with ID {building_id} not found.&quot;
         super().__init__(status_code=404, detail=detail)
-
-class ClassroomNotFoundException(CompaxException):
+</code></pre>
+<pre><code class="language-python">class ClassroomNotFoundException(CompaxException):
     def __init__(self, classroom_id: str):
         detail = f&quot;Classroom with ID {classroom_id} not found.&quot;
         super().__init__(status_code=404, detail=detail)
-
-class LaboratoryNotFoundException(CompaxException):
+</code></pre>
+<pre><code class="language-python">class LaboratoryNotFoundException(CompaxException):
     def __init__(self, laboratory_id: str):
         detail = f&quot;Laboratory with ID {laboratory_id} not found.&quot;
         super().__init__(status_code=404, detail=detail)
-
-class OfficeNotFoundException(CompaxException):
+</code></pre>
+<pre><code class="language-python">class OfficeNotFoundException(CompaxException):
     def __init__(self, office_id: str):
         detail = f&quot;Office with ID {office_id} not found.&quot;
         super().__init__(status_code=404, detail=detail)
-
-class UserNotFoundException(CompaxException):
+</code></pre>
+<pre><code class="language-python">class UserNotFoundException(CompaxException):
     def __init__(self, message: str):
         detail = f&quot;{message}&quot;
         super().__init__(status_code=404, detail=detail)
-
-class UserReferenceFoundException(CompaxException):
+</code></pre>
+<pre><code class="language-python">class UserReferenceFoundException(CompaxException):
     def __init__(self, ref: int):
         detail = f&quot;User with Reference {int} not found.&quot;
         super().__init__(status_code=404, detail=detail)
-
-class UserNameNotFoundException(CompaxException):
+</code></pre>
+<pre><code class="language-python">class UserNameNotFoundException(CompaxException):
     def __init__(self, username: str):
         detail = f&quot;User with name {username} not found.&quot;
         super().__init__(status_code=404, detail=detail)
-
-class AuthInvalidCredentialsException(CompaxException):
+</code></pre>
+<pre><code class="language-python">class AuthInvalidCredentialsException(CompaxException):
     def __init__(self):
         super().__init__(
             status_code=401,
@@ -181,63 +167,23 @@ class AuthInvalidCredentialsException(CompaxException):
             + &quot;User might exist. User with reference might exist. &quot;
             + &quot;User year group might be Incorrect&quot;,
         )
-
-class InvalidRatingException(CompaxException):
+</code></pre>
+<pre><code class="language-python">class InvalidRatingException(CompaxException):
     def __init__(self):
         super().__init__(
             status_code=401,
             detail=&quot;Invalid credentials. Details Provided might incorrect!&quot;,
         )
-
-class UnauthorizedException(CompaxException):
+</code></pre>
+<pre><code class="language-python">class UnauthorizedException(CompaxException):
     def __init__(self):
         super().__init__(status_code=403, detail=&quot;Unauthorized access.&quot;)
-
-class BookingNotFoundException(CompaxException):
+</code></pre>
+<pre><code class="language-python">class BookingNotFoundException(CompaxException):
     def __init__(self, booking_id: str):
         detail = f&quot;Booking with ID {booking_id} not found.&quot;
         super().__init__(status_code=404, detail=detail)
-
 </code></pre>
-<ul>
-<li>
-<h2 id="global-exception-handler-middleware">Global Exception Handler Middleware</h2>
-</li>
-<li>
-<p>Implement a global exception handler middleware to catch unhandled exceptions and provide consistent error responses to the client.</p>
-</li>
-<li>
-<h2 id="logging">Logging</h2>
-</li>
-<li>
-<p>Implement logging to record application events, errors, and debugging information. Use Python's built-in <code>logging</code> module or third-party libraries like <code>structlog</code> to handle logging effectively.</p>
-</li>
-<li>
-<h2 id="request-and-response-logging">Request and Response Logging</h2>
-</li>
-<li>
-<p>Consider logging incoming requests and outgoing responses to understand application flow and debug issues.</p>
-</li>
-<li>
-<h2 id="handling-expected-errors">Handling Expected Errors</h2>
-</li>
-<li>
-<p>For known and expected errors, raise custom error classes with appropriate status codes and error details.</p>
-</li>
-<li>
-<h2 id="unit-tests-for-error-handling">Unit Tests for Error Handling</h2>
-</li>
-<li>
-<p>Write unit tests to ensure that the error handling and responses are working as expected.</p>
-</li>
-<li>
-<h2 id="sensitive-information-handling">Sensitive Information Handling</h2>
-</li>
-<li>
-<p>Ensure that error responses do not expose sensitive information that could be used for malicious purposes.</p>
-</li>
-</ul>
-<p>By implementing robust error handling and logging in the backend, the Compax web app can provide informative error responses to clients, facilitate debugging, and enhance the overall reliability and user experience. Proper logging helps identify potential issues early and enables developers to respond quickly to errors, improving the stability and security of the application.</p>
               
             </div>
           </div><footer>
