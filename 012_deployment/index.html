@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Testing - Compax Backend Api 0.1.0</title>
+    <title>Deployment - Compax Backend Api 0.1.0</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Testing";
-        var mkdocs_page_input_path = "011_testing.md";
+        var mkdocs_page_name = "Deployment";
+        var mkdocs_page_input_path = "012_deployment.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -76,16 +76,16 @@
                 <li class="toctree-l1"><a class="reference internal" href="../010_error_handling_and_logging/">Error Handling</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Testing</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#pytest">pytest</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../011_testing/">Testing</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../012_deployment/">Deployment</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Deployment</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#render">Render</a>
+    </li>
+    </ul>
                 </li>
               </ul>
       </div>
@@ -102,7 +102,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>Testing</li>
+      <li>Deployment</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -111,50 +111,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="testing">Testing</h1>
-<hr />
-<p>Testing is a critical aspect of software development to ensure the reliability and functionality of the backend of the Compax web app. Below are the blocks of code for testing compax api:</p>
-<h2 id="pytest">pytest</h2>
-<pre><code class="language-python">
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-permissions:
-  contents: read
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: &quot;3.10&quot;
-    - uses: actions/cache@v3
-      id: cache
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.*') }}
-        restore-keys: | 
-          ${{ runner.os }}-pip-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt        
-    - name: Run pytest
-      run: | 
-        pytest
-</code></pre>
+                <h1 id="deployment">Deployment</h1>
+<p>Deploying the backend of the <em>Compax</em> web app involves making it accessible on a production server to handle incoming requests from the frontend and clients. Below are step-by-step deployment instructions for the backend:</p>
+<h2 id="render">Render</h2>
+<p>The backend of the Compax web app was efficiently deployed using the Render cloud platform. Render provided a robust and straightforward deployment process, ensuring that the backend was accessible on a production server to handle incoming requests from the frontend and clients. The deployment on Render allowed for seamless scaling, reliability, and performance, ensuring that the backend could handle user traffic efficiently. Additionally, Render's security measures and continuous monitoring further contributed to a secure and stable deployment environment for the Compax backend.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../010_error_handling_and_logging/" class="btn btn-neutral float-left" title="Error Handling"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../012_deployment/" class="btn btn-neutral float-right" title="Deployment">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../011_testing/" class="btn btn-neutral float-left" title="Testing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -177,10 +142,8 @@ jobs:
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../010_error_handling_and_logging/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../011_testing/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../012_deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
