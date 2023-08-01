@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>API Design Principles - Compax Backend Api 0.1.0</title>
+    <title>Testing - Compax Backend Api 0.1.0</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "API Design Principles";
-        var mkdocs_page_input_path = "004_api_endpoints.md";
+        var mkdocs_page_name = "Testing";
+        var mkdocs_page_input_path = "011_testing.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -52,10 +52,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../003_technology_stack_used._for_backend/">Technology Stack</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">API Design Principles</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../004_api_endpoints/">API Design Principles</a>
                 </li>
               </ul>
               <ul>
@@ -78,8 +76,12 @@
                 <li class="toctree-l1"><a class="reference internal" href="../010_error_handling_and_logging/">Error Handling</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../011_testing/">Testing</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Testing</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pytest">pytest</a>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -100,7 +102,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>API Design Principles</li>
+      <li>Testing</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -109,32 +111,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="api-design-principles">API Design Principles</h1>
+                <h1 id="testing">Testing</h1>
 <hr />
-<p>When designing APIs for the Compax web app, it's important to follow these best practices to ensure consistency, ease of use, and scalability:</p>
-<ul>
-<li>
-<p>RESTful Design: Design the APIs following the principles of Representational State Transfer (REST). Use resource-based URLs and appropriate HTTP methods (GET, POST, PUT, DELETE) for operations.</p>
-</li>
-<li>
-<p>Endpoint Naming: Use descriptive and meaningful names for endpoints that reflect the action being performed.</p>
-</li>
-<li>
-<p>Request and Response Formats: Define consistent request and response formats, such as JSON, to ensure compatibility and ease of integration with the frontend.</p>
-</li>
-<li>
-<p>Versioning: Consider versioning the APIs to maintain backward compatibility and allow for future enhancements.</p>
-</li>
-<li>
-<p>Authentication and Authorization: Implement appropriate authentication and authorization mechanisms, such as token-based authentication (e.g., JWT), to secure access to protected endpoints.</p>
-</li>
-</ul>
+<p>Testing is a critical aspect of software development to ensure the reliability and functionality of the backend of the Compax web app. Below are the blocks of code for testing compax api:</p>
+<h2 id="pytest">pytest</h2>
+<pre><code class="language-python">
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: &quot;3.10&quot;
+    - uses: actions/cache@v3
+      id: cache
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.*') }}
+        restore-keys: | 
+          ${{ runner.os }}-pip-
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt        
+    - name: Run pytest
+      run: | 
+        pytest
+</code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../003_technology_stack_used._for_backend/" class="btn btn-neutral float-left" title="Technology Stack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../005_security_measures_and_authentication/" class="btn btn-neutral float-right" title="Security">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../010_error_handling_and_logging/" class="btn btn-neutral float-left" title="Error Handling"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../012_deployment_instructions/" class="btn btn-neutral float-right" title="Deployment">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -157,10 +177,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../003_technology_stack_used._for_backend/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../010_error_handling_and_logging/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../005_security_measures_and_authentication/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../012_deployment_instructions/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
